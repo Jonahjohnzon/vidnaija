@@ -16,14 +16,14 @@ const Footer = ({date}) => {
                 <section className=' mb-5 lg:mb-0'>
                     <header className='font-bold text-white sm:text-xl lg:mb-4'>Socal Media</header>
                     <ul>
-                        <li className=' hover:text-yellow-500 sm:text-base  text-xs cursor-pointer'><Link href="https://twitter.com/vidnaija" >Twitter</Link></li>
-                        <li className=' hover:text-yellow-500 sm:text-base  text-xs cursor-pointer'>Telegram</li>
+                        <li className=' hover:text-yellow-500 sm:text-base  text-xs sm:cursor-pointer'><Link href="https://twitter.com/vidnaija" >Twitter</Link></li>
+                        <li className=' hover:text-yellow-500 sm:text-base  text-xs sm:cursor-pointer'>Telegram</li>
                     </ul>
                 </section>
                 <section className=' mb-5 lg:mb-0'>
                     <header className='font-bold text-white  sm:text-xl lg:mb-4' >Resources</header>
                     <ul>
-                        <li className=' hover:text-yellow-500 cursor-pointer text-xs sm:text-base '><Link href="/dmca">DMCA Takedown</Link></li>
+                        <li className=' hover:text-yellow-500 sm:cursor-pointer text-xs sm:text-base '><Link href="/dmca">DMCA Takedown</Link></li>
                     </ul>
                 </section>
                 <section className=' mb-5 lg:mb-0'>

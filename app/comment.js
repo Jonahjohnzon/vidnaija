@@ -100,7 +100,7 @@ const Commentss = ({url, disable, setDispay,setDisable , setload, Check, reply, 
           
         
         </div>
-        <div className=' flex justify-center lg:justify-start'><input type='submit' className=' bg-red-600 text-white px-9 py-2 rounded-3xl font-semibold cursor-pointer' onClick={probs.handleSubmit} value="SUBMIT" /></div>
+        <div className=' flex justify-center lg:justify-start'><input type='submit' className=' bg-red-600 text-white px-9 py-2 rounded-3xl font-semibold sm:cursor-pointer' onClick={probs.handleSubmit} value="SUBMIT" /></div>
 
       </div></div>)}}
     </Formik>

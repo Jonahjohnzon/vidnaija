@@ -31,7 +31,7 @@ const Control = ({no, setno, trailer}) =>{
     const info = trailer.map((e)=>{
 
         return(
-            <div className=' py-3 w-full cursor-pointer pl-5 hover:bg-[#1F375F]' key={e._id} style={no==e._id?{backgroundColor:"#1F375F"}:{backgroundColor:""}} onClick={()=>setno(e._id)}>
+            <div className=' py-3 w-full sm:cursor-pointer pl-5 hover:bg-[#1F375F]' key={e._id} style={no==e._id?{backgroundColor:"#1F375F"}:{backgroundColor:""}} onClick={()=>setno(e._id)}>
                 <div className=' flex items-start'>
                     <div className=' w-36 rounded-sm h-20 bg-cover mr-2' style={{backgroundImage:`url(${e.image})`}} ></div>
                     <p className=' font-bold whitespace-normal w-full'>{truncateString(e.title, 90)}</p>
@@ -44,8 +44,8 @@ const Control = ({no, setno, trailer}) =>{
 const Anime =({anime, title})=>{
     const info = anime.episode.map((e)=>{
         return(
-            <div key={e._id} className=' text-center mb-3 cursor-pointer'>
-            <Link href={{pathname:"/download",query:{uri:e.link}}} className=' font-bold underline text-sm lg:text-base xl:text-xl text-red-500  w-full cursor-pointer hover:text-yellow-500' >{title} - Episode {e.no}</Link>
+            <div key={e._id} className=' text-center mb-3 sm:cursor-pointer'>
+            <Link href={{pathname:"/download",query:{uri:e.link}}} className=' font-bold underline text-sm lg:text-base xl:text-xl text-red-500  w-full sm:cursor-pointer hover:text-yellow-500' >{title} - Episode {e.no}</Link>
             </div>
         )
     })

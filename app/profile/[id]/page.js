@@ -51,7 +51,7 @@ Gets()
           <div><Top/></div>
           <div className=' relative z-30 w-full flex justify-center pt-40'>
           <div className=' w-[95%] lg:w-[50%]'>
-            <div className='w-full flex flex-wrap justify-center items-center pb-40'><Imagesprofile src={datalist.profile_image}/><div className=' flex flex-col items-center ml-5'><p className=' text-white text-center font-bold text-2xl'>{datalist.user_name.toUpperCase()}</p><div className=' flex justify-between'><Stars no={datalist.rank}/><Stars no={datalist.rank}/><Stars no={datalist.rank}/><Stars no={datalist.rank}/></div><div className='mt-2'><Type no={datalist.rank}/></div></div></div>
+            <div className='w-full flex flex-wrap justify-center items-center pb-40'><div className=' w-20 sm:w-full '><Imagesprofile src={datalist.profile_image}/></div><div className=' flex  flex-col items-center ml-5'><p className=' text-white text-center font-bold text-2xl'>{datalist.user_name.toUpperCase()}</p><div className=' flex justify-between'><Stars no={datalist.rank}/><Stars no={datalist.rank}/><Stars no={datalist.rank}/><Stars no={datalist.rank}/></div><div className='mt-2'><Type no={datalist.rank}/></div></div></div>
             <div className=' border-gray-200 mb-20  border-[1px] p-5 border-opacity-10'>
               <Formik
               initialValues={{user_name:datalist.user_name}}
@@ -92,7 +92,7 @@ Gets()
                 <div className=' flex flex-wrap mb-5'>{
                   arrays.map((e,w)=>{
                     return(<div key={w}>
-                      <div className=' sm:mr-10  mb-5 cursor-pointer relative w-16 rounded-full overflow-hidden group' onClick={()=>setSelected(e)}><Imagesprofile src={e}/>{selected == e &&<div className='absolute top-0 bg-opacity-80 w-full h-full z-40 bg-black flex justify-center items-center text-yellow-500 text-xl '><FaCheck /></div>}<div className=' absolute top-0 bg-opacity-0 group-hover:bg-opacity-60 w-full h-full z-20 bg-black '></div></div>
+                      <div className=' sm:mr-10  mb-5  relative w-16 rounded-full overflow-hidden group' onClick={()=>setSelected(e)}><Imagesprofile src={e}/>{selected == e &&<div className='absolute top-0 bg-opacity-80 w-full h-full z-40 bg-black cursor-pointer flex justify-center items-center text-yellow-500 text-xl '><FaCheck /></div>}<div className=' absolute top-0 bg-opacity-0 group-hover:bg-opacity-60 w-full h-full z-20 bg-black '></div></div>
                     </div>)
                   })}</div>
                   <div className=' flex justify-center sm:justify-end items-center mb-20'> <div><input type='submit' className=' bg-red-600 text-white px-9 py-2 rounded-3xl font-semibold cursor-pointer'  value="SUBMIT" onClick={prop.handleSubmit} /></div></div></></section>)}

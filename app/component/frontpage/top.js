@@ -28,7 +28,7 @@ const Info =()=>{
                     <div className=' w-3/4 mb-5'>
                         <h1 className=' text-5xl lg:text-6xl font-bold text-white'>{e.title}<span className=' text-2xl lg:text-4xl font-normal ml-3 text-[#A5AFBE]'>{e.year}</span></h1>
                     </div>
-                    <div className='group text-red-600 hover:text-yellow-500 cursor-pointer'  onClick={() => router.push(e.trailer)}>
+                    <div className='group text-red-600 hover:text-yellow-500 sm:cursor-pointer'  onClick={() => router.push(e.trailer)}>
                             <section className=' flex items-center'><div className=' text-sm w-12 h-12 border-[1px] group-hover:border-yellow-500 rounded-full flex justify-center items-center border-red-600 mr-3'><FaPlay /></div><p className=' font-semibold'>WATCH TRAILER</p></section>
                     </div>
                     <div className=' mt-5 mb-5 flex flex-wrap items-center'>
@@ -65,9 +65,9 @@ const Left =()=>{
   return (
     <div className=" bg-[url('/slider-bg2.jpg')] pt-48 pb-10  w-[100vw] overflow-hidden text-[#A5AFBE] flex justify-center  bg-cover bg-no-repeat ">
         <div className=' w-[95%] 2xl:w-9/12 flex items-center justify-between'>
-        <div className=' text-5xl mr-20 cursor-pointer hover:text-yellow-500 hidden md:block lg:hidden xl:block' onClick={Left}><FaChevronLeft /></div>
+        <div className=' text-5xl mr-20 sm:cursor-pointer hover:text-yellow-500 hidden md:block lg:hidden xl:block' onClick={Left}><FaChevronLeft /></div>
             <Info/>
-        <div className=' text-5xl ml-20 cursor-pointer hover:text-yellow-500 hidden md:block lg:hidden xl:block'  onClick={Right}><FaChevronRight/></div>
+        <div className=' text-5xl ml-20 sm:cursor-pointer hover:text-yellow-500 hidden md:block lg:hidden xl:block'  onClick={Right}><FaChevronRight/></div>
         </div>
     </div>
   )
