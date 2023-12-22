@@ -26,7 +26,7 @@ const Body = ({ data, seano, setseason,seasonno,  setload }) => {
             </h1>
           </div>
           <div
-            className=" group hover:text-yellow-500 text-red-600 mb-14 cursor-pointer"
+            className=" group hover:text-yellow-500 text-red-600 mb-14 sm:cursor-pointer"
             onClick={() => router.push(data.trailer)}
           >
             <section className=" flex items-center">
