@@ -1,25 +1,31 @@
 "use client"
 import React, { useState } from 'react'
 import { Formik } from 'formik'
+import * as yup from 'yup'
 
 const Login = () => {
     const [show, setshow] = useState(false)
     const [result, setresult] = useState()
     const [load, setload] = useState(false)
+    const Schema = yup.object({
+        email:yup.string().email().required().label('Email').max(30).min(6),
+        password:yup.string().min(1).max(15).required().label('Password')
+    })
   return (
     <main className=' h-[100%]  w-full'>
         <div className=' flex flex-col items-center justify-center h-[100%]  w-full'>
-            <div className='mb-5'>
+            <div className='mb-5 flex flex-col items-center'>
             <header className=' text-black mb-2 font-bold text-3xl'>LOGIN</header>
             {show && <p className='text-red-500 font-semibold'>{result}</p>}
             </div>
 
             <div className=' w-full px-8'>
                 <Formik
+                validationSchema={Schema}
                 initialValues={{email:"", password:""}}
                 onSubmit={async(form,{resetForm})=>{
                        setload(true)
-                       try{ const data = await fetch('http://localhost:8000/loginIn',{
+                       try{ const data = await fetch('http://79.133.57.156:8000/loginIn',{
                             method:'POST',
                             headers:{'Content-Type': 'application/json'},
                             body:JSON.stringify(form)
@@ -37,8 +43,6 @@ const Login = () => {
                             console.log(info.data)
                             const datas = {
                                 token:info.token,
-                                profile_image:info.data.profile_image,
-                                Notification:info?.data.notification.alarm,
                                 _id:info?.data._id
                             }
                             const inf = JSON.stringify(datas)
@@ -64,18 +68,17 @@ const Login = () => {
                                         <div className=' mb-5 text-black'>
                                             <label htmlFor='email' className=' text-black font-bold text-base'>EMAIL:</label>
                                             <input id="email" type='email' className=' font-semibold px-4 w-full h-12 mt-2 border-[1px] border-gray-200' value={prop.values.email} onChange={prop.handleChange('email')}/>
+                                            <div className=' text-red-500 text-sm'>{prop.touched.email &&prop.errors.email}</div>
                                         </div>
                                         <div className=' mb-5'>
                                             <label htmlFor='password' className=' text-black font-bold text-base'>PASSWORD:</label>
-                                            <input id="password" type='text' className=' text-black font-semibold placeholder:text-black px-4 w-full h-12 mt-2 border-[1px] border-gray-200' placeholder='*****'  value={prop.values.password} onChange={prop.handleChange('password')}/>
+                                            <input id="password" type='password' className=' text-black font-semibold placeholder:text-black px-4 w-full h-12 mt-2 border-[1px] border-gray-200' placeholder='*****'  value={prop.values.password} onChange={prop.handleChange('password')}/>
+                                            <div className=' text-red-500 text-sm' >{prop.touched.password &&prop.errors.password}</div>
                                         </div>
-                                        <div className=' flex justify-between items-center mb-5'>
+                                        <div className=' flex justify-end items-center mb-5'>
+                                   
                                             <div>
-                                                <input type='checkbox' id='remember' className=' mr-2'/>
-                                                <label htmlFor='remember' className=' text-black font-bold'>Remember me</label>
-                                            </div>
-                                            <div>
-                                                <p className=' font-bold'>Forget password ?</p>
+                                                <p className=' font-bold cursor-pointer hover:text-yellow-500'>Forget password ?</p>
                                             </div>
                                         </div>
                                         <div>

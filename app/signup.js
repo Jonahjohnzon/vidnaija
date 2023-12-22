@@ -1,26 +1,34 @@
 "use client"
 import React, { useState } from 'react'
 import { Formik } from 'formik'
+import * as yup from 'yup'
 
 const Signup = () => {
   const [show, setshow] = useState(false)
   const [result, setresult] = useState()
   const [load, setload] = useState(false)
   const [color, setcolor] = useState(true)
+  const Schema=yup.object({
+    email:yup.string().email().required().label('Email'),
+    user_name:yup.string().min(1).max(25).required().label('UserName'),
+    password:yup.string().min(1).max(15).required().label('Password'),
+    comfirmpassword:yup.string().oneOf([yup.ref('password'),null],'Password must match').required().label('Password Comfirmation')
+  })
   return (
     <main className=' h-[100%] w-full'>
     <div className=' flex flex-col items-center justify-center h-[100%]  w-full'>
-        <div className='mb-5'>
+        <div className='mb-5 flex flex-col items-center'>
         <header className=' text-black mb-2 font-bold text-3xl'>SIGN UP</header>
         {show && <p className=' font-semibold' style={color?{color:"red"}:{color:"green"}}>{result}</p>}
         </div>
 
         <div className=' w-full px-8'>
             <Formik
+            validationSchema={Schema}
             initialValues={{email:"", password:"", comfirmpassword:"",user_name:""}}
             onSubmit={async(form,{resetForm})=>{
                    setload(true)
-                   try{ const data = await fetch('http://localhost:8000/userData',{
+                   try{ const data = await fetch('http://79.133.57.156:8000/userData',{
                         method:'POST',
                         headers:{'Content-Type': 'application/json'},
                         body:JSON.stringify(form)
@@ -58,18 +66,22 @@ const Signup = () => {
                                   <div className=' mb-5 text-black'>
                                         <label htmlFor='name' className=' text-black font-bold text-base'>USERNAME:</label>
                                         <input id="name" type='text' className=' font-semibold px-4 w-full h-12 mt-2 border-[1px] border-gray-200' value={prop.values.user_name} onChange={prop.handleChange('user_name')}/>
+                                        <div className=' text-red-500 text-sm'>{prop.touched.user_name && prop.errors.user_name}</div>
                                     </div>
                                     <div className=' mb-5 text-black'>
                                         <label htmlFor='email' className=' text-black font-bold text-base'>EMAIL:</label>
                                         <input id="email" type='email' className=' font-semibold px-4 w-full h-12 mt-2 border-[1px] border-gray-200' value={prop.values.email} onChange={prop.handleChange('email')}/>
+                                        <div className=' text-red-500 text-sm'>{prop.touched.email && prop.errors.email}</div>
                                     </div>
                                     <div className=' mb-5'>
                                         <label htmlFor='password' className=' text-black font-bold text-base'>PASSWORD:</label>
                                         <input id="password" type='text' className=' text-black font-semibold placeholder:text-black px-4 w-full h-12 mt-2 border-[1px] border-gray-200' placeholder='*****'  value={prop.values.password} onChange={prop.handleChange('password')}/>
+                                        <div className=' text-red-500 text-sm'>{prop.touched.password &&prop.errors.password}</div>
                                     </div>
                                     <div className=' mb-8'>
                                         <label htmlFor='cpassword' className=' text-black font-bold text-base'>COMFIRM PASSWORD:</label>
                                         <input id="cpassword" type='text' className=' text-black font-semibold placeholder:text-black px-4 w-full h-12 mt-2 border-[1px] border-gray-200' placeholder='*****'  value={prop.values.comfirmpassword} onChange={prop.handleChange('comfirmpassword')}/>
+                                        <div className=' text-red-500 text-sm'>{prop.touched.comfirmpassword &&prop.errors.comfirmpassword}</div>
                                     </div>
                                     <div>
                                         {load?        <div className=' flex justify-center'>

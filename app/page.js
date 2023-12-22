@@ -8,6 +8,7 @@ import Loading from "./loading";
 
 
 
+
 export default function Home() {
   const [datas,setdatas] = useState()
   const [second, setSecond] = useState()
@@ -15,8 +16,10 @@ export default function Home() {
  const [fourth, setFourth] = useState()
  const [anime, setanime]  = useState()
  const [load, setload] = useState(false)
+ const [trail, settrail] = useState([])
+ const [lat, setlat] = useState([])
   const First =async()=>{
-    const url = "http://localhost:8000/getcate"
+    const url = "http://79.133.57.156:8000/getcate"
     try{
     const games = await fetch(url)
     const Data = await games.json()
@@ -26,13 +29,20 @@ export default function Home() {
     const info  = Data?.top
     const secondinfo  = Data?.hollywood
     const thirdinfo  = Data?.bollywood
-    const fourthinfo  = Data?.nollywood
+    const fourthinfo  = Data?.tvshows
     const ani = Data.datak
+    const trailer = Data?.trailer
+    const latest = Data?.late
+    
+    setlat(latest)
     setdatas(info)
     setSecond(secondinfo)
     setThird(thirdinfo)
     setFourth(fourthinfo)
-    setanime(ani)}}
+    setanime(ani)
+    settrail(trailer)
+  }}
+
 
     catch(e){
             console.log(e)
@@ -42,16 +52,16 @@ export default function Home() {
     First()
   },[])
   return (
-    <main className="flex min-h-screen w-full flex-col items-center overflow-x-hidden justify-between">
+    <main className="flex min-h-screen w-full flex-col items-center justify-between">
      { load  ?<section className=" flex flex-col items-center">
       <Top Datas={datas}/>
       <div className=" w-[88%] overflow-hidden pt-16">
       <Second header={"HOLLYWOOD RELEASE"} Datas={second} />
       <Second header={"BOLLYWOOD RELEASE"} Datas={third}/>
-      <Second header={"NOLLYWOOD RELEASE"} Datas={fourth}/>
+      <Second header={"TVSHOWS RELEASE"} Datas={fourth}/>
       </div>
-      <Trailer/>
-      <div className=" w-[88%] overflow-hidden pt-16"><Animes header={"K-SERIES RELEASE"} Datas={anime} /></div>
+      <Trailer trailer={trail} lat={lat}/>
+      <div className=" w-[90%] lg:w-[88%] overflow-hidden pt-16"><Animes header={"ASIAN-SERIES RELEASE"} Datas={anime} /></div>
      </section>:<Loading/>}
     </main>
   )

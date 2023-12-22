@@ -5,13 +5,13 @@ import { IoChatboxEllipses } from "react-icons/io5";
 import { useRouter } from 'next/navigation';
 
 const Data=({Datas})=>{
-
+const router = useRouter()
     const info = Datas.map((e)=>{
         const comment = e.comment.length
         
         return(
-            <div key={e._id} className=' mb-10'>
-                <div style={{backgroundImage:`url(${e.image})`}} className=' relative w-[200px] mr-7 flex justify-center mb-2 items-center h-[300px] bg-cover group cursor-pointer'>
+            <div key={e._id} className=' mb-10' onClick={()=>router.push(`/showcase/${e._id}`)}>
+                <div style={{backgroundImage:`url(${e.image})`}} className=' relative w-[200px]  flex justify-center mb-2 items-center h-[300px] bg-cover group cursor-pointer'>
                     <div className=' absolute w-full h-full bg-black z-30 opacity-20 group-hover:opacity-70 transition-all duration-500 '></div>
                     <div className=' relative z-40 opacity-0 group-hover:opacity-100 flex flex-col items-center ease-in-out transition-all duration-700'>
                        <div > <Button name="DOWNLOAD"   url={`/showcase/${e._id}`} /></div>
@@ -40,7 +40,7 @@ const Body = ({Datas,info}) => {
             <ul className=' font-bold text-sm flex items-center mb-8'>
                 <li className=' mr-7 hover:text-yellow-500 cursor-pointer text-yellow-500'>#{info.toUpperCase()}</li>
             </ul>
-            <div className=' flex flex-wrap'>
+            <div className=' flex flex-wrap justify-center sm:justify-between '>
                 <Data Datas={Datas}/>
             </div>
         </div>

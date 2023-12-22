@@ -5,7 +5,8 @@ const Note = () => {
     <div>
         <div>
           <header className=' text-yellow-500 font-bold underline mb-1'>IF MOVIE LINK IS NOT WORKING?</header>
-          <p className=' w-96 text-sm mb-3 text-white'>If you cant find what you are looking for, you can join our <span className=' text-blue-500 underline cursor-pointer'>COMMUNITY-FORUM </span>and ask members</p>
+          <p className=' w-full text-sm mb-3 text-white'>If you cant find what you are looking for, you can email us through <span className=' text-blue-500 underline cursor-pointer'>FIND-MY-MOVIE</span>let us get it for you</p>
+          <header className=' text-yellow-500 font-bold underline mb-1'>COMMUNITY FORUM COMING SOON</header>
           <div className=' w-full text-sm'><header className=" font-bold text-yellow-500 underline mb-3">Why join our forum?</header>
 <p className='mb-1 text-white'>🤝 Community Support: Get quick help and expert advice from fellow users who may have faced similar download challenges.</p>
 

@@ -21,9 +21,9 @@ const Stars = ({no}) =>{
         {
             setcolors("green")
         }
-        else if(no < 300 && no > 9)
+        else if(no < 300 && no > 149)
         {
-            setcolors("purple")
+            setcolors("cyan")
         }
         else if(no < 500 && no > 299)
         {

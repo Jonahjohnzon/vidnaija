@@ -6,19 +6,19 @@ import { useRouter } from "next/navigation";
 import Season from "./season";
 import Link from "next/link"
 
-const Body = ({ data }) => {
+const Body = ({ data, seano, setseason,seasonno,  setload }) => {
   const router = useRouter();
   const series = data.series;
   return (
-    <div>
+    <div className=" w-full">
     <div className=" h-full w-full flex justify-center items-center z-30 pt-[240px]">
-      <div className="   w-full z-30 flex justify-between">
-        <div className=" rounded-lg overflow-hidden w-[500px] mr-10">
-          <img src={data.image} className="w-full h-[500px]" />
+      <div className="   w-full z-30 flex items-center lg:items-start flex-col lg:flex-row justify-between">
+        <div className=" rounded-lg overflow-hidden  w-[200px] lg:w-[450px]  lg:h-[500px] h-[300px]  lg:mr-10">
+          <img src={data.image} className=" w-full h-full" />
         </div>
-        <div className=" w-full">
+        <div className=" w-full flex flex-col items-center lg:items-start">
           <div className="  mb-5">
-            <h1 className=" text-4xl font-semibold  text-white whitespace-nowrap">
+            <h1 className=" mt-5 lg:mt-0  text-2xl lg:text-4xl font-semibold  text-white whitespace-nowrap">
               {data.title}
               <span className=" text-2xl font-light ml-3 text-[#A5AFBE] whitespace-nowrap">
                 {data.year}
@@ -52,8 +52,8 @@ const Body = ({ data }) => {
               </div>
             </div>
           </div>
-          <div className="mt-5">
-            <p className=" font-light text-sm  mb-3 text-white">
+          <div className="mt-5 flex flex-col items-center lg:items-start">
+            <p className=" font-light text-sm text-center lg:text-start  mb-3 text-white">
               {data.overview}
             </p>
             <div className=" flex items-center mb-3">
@@ -69,19 +69,20 @@ const Body = ({ data }) => {
               <div className=" font-medium ">Release: {data.release}</div>
             </div>
             <div className=" font-medium mb-4 ">Rated: {data.rated}</div>
-            <p className=" text-sm mb-5 text-yellow-500">
-              IF LINK NOT WORKING PLEASE LET US KNOW{" "}
-              <span className=" text-blue-500 underline">HERE</span>
+            <p className=" text-sm mb-5 text-yellow-500  underline">
+             NOTE: WE DO NOT HOST ANY MOVIE ON OUR SERVER, WE JUST PROVIDE LINKS{" "}
             </p>
-            {series || (
-              <Link href={{pathname:"/download",query:{uri:data.download}}} className="bg-red-600 text-white px-9 py-2 rounded-3xl font-semibold">DOWNLOAD</Link>
+            {series || (<div className=" flex flex-col lg:flex-row">
+              {data.lowdownload?.link &&<Link href={{pathname:"/download",query:{uri:data.lowdownload.link}}} className="bg-red-600 text-white px-9 py-2 mb-7 lg:mb-0 lg:mr-10 font-semibold">LOW {data.lowdownload.size}MB LINK</Link>}
+              {data.highdownload?.link &&<Link href={{pathname:"/download",query:{uri:data.highdownload.link}}} className="bg-red-600 text-white px-9 py-2  font-semibold">HIGH {data.highdownload.size}MB LINK</Link>}
+              </div>
             )}
           </div>
         </div>
       </div>
      
     </div>
-    {series && <Season season={data.seasons}/>}
+    {series && <Season season={data.seasons} seano={seano} setseason={setseason} seasonno={seasonno}  setload={ setload}/>}
     </div>
   );
 };

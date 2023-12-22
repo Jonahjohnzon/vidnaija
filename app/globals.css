@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-rgb: 165, 175, 190;
+  --background-start-rgb: 2, 11, 25;
+  --background-end-rgb: 2, 11, 23;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,6 +24,9 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+p{
+  white-space: pre-line;
 }
 
 .ql-editor a {

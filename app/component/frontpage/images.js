@@ -30,7 +30,71 @@ const Get = () =>{
     }
     else if (src == '7')
     {
-        setusr('/profileimage/7.png')
+        setusr('/profileimage/8.png')
+    }
+    else if (src == '8')
+    {
+        setusr('/profileimage/9.png')
+    }
+    else if (src == '9')
+    {
+        setusr('/profileimage/10.png')
+    }
+    else if (src == '10')
+    {
+        setusr('/profileimage/11.png')
+    }
+    else if (src == '11')
+    {
+        setusr('/profileimage/12.png')
+    }
+    else if (src == '12')
+    {
+        setusr('/profileimage/13.png')
+    }
+    else if (src == '13')
+    {
+        setusr('/profileimage/14.png')
+    }
+    else if (src == '14')
+    {
+        setusr('/profileimage/15.png')
+    }
+    else if (src == '15')
+    {
+        setusr('/profileimage/16.png')
+    }
+    else if (src == '16')
+    {
+        setusr('/profileimage/17.png')
+    }
+    else if (src == '17')
+    {
+        setusr('/profileimage/18.png')
+    }
+    else if (src == '18')
+    {
+        setusr('/profileimage/19.png')
+    }
+    else if (src == '19')
+    {
+        setusr('/profileimage/20.png')
+    }
+    else if (src == '20')
+    {
+        setusr('/profileimage/21.png')
+    }
+    else if (src == '21')
+    {
+        setusr('/profileimage/22.png')
+    }
+    else if (src == '22')
+    {
+        setusr('/profileimage/23.png')
+    }
+    else if (src == '001')
+    {
+        setusr('/profileimage/001.png')
     }
     else
     {

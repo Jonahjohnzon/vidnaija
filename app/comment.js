@@ -1,55 +1,79 @@
 "use client"
-import React,{useState,  useMemo} from 'react'
-import dynamic from "next/dynamic";
+import React,{useState} from 'react'
 import { Formik } from 'formik'
-
+import { useRouter } from 'next/navigation';
 import 'react-quill/dist/quill.snow.css';
+import * as yup from 'yup'
 
 
-const Commentss = ({url, comment_display, disable, setDispay,setDisable,Result , setload}) => {
+const Commentss = ({url, disable, setDispay,setDisable , setload, Check, reply, setreply}) => {
+    const [shows,setshow] = useState(false)
+    const Schema = yup.object({
+      chat:yup.string().label('Chat').max(200).required(),
+
+    })
     
-    const ReactQuill = useMemo(() => dynamic(() => import('react-quill'), { ssr: false }),[]);
-    const [show, setshow] =  useState(false)
+
   return (
-    <section className=" w-full">
+    <section className=" w-full" id={'chat'}>
+    {reply?.re||<div className=' flex flex-col items-start mb-5'>
+      <h1 className=' text-white font-bold mb-1'>REPLY</h1>
+      <div className='  px-5 py-3 bg-[#0f2236]'>{reply?.mgs}</div></div>}
     <Formik className=' w-full'
-    initialValues={{chat:"",link:"",titles:"",wordings:""}}
+    validationSchema={Schema}
+    initialValues={{chat:""}}
     onSubmit={async(form,{resetForm})=>{
-      setload(true)
+      if(form.chat == "" && form.titles == "")
+      {
+        return
+      }
+      const logg= await localStorage.getItem('data')
+      const logged = await JSON.parse(logg)
+      if(!logged)
+      {
+        setshow(true)
+         return
+      }
+
       if(disable)
       {
         return}
       setDispay(true)
-      setDisable(true)
-      setshow(false)
       let value = true
       if(form.titles == "")
       {
         value = false
       }
       const obj ={
-            name:"jonah",
-            id_user:"12345",
-            profile_image:"1",
-            rank:1,
-            star:10,
-            reaction:0,
+            id_user:logged._id,
             title:value
       }
-      const total = {...form,...obj}
+     
+      const total = {...form,...obj,...reply}
+      
         const data = await fetch(url,{
           method: "PUT",
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 'Content-Type': 'application/json', 'auth-token':logged.token },
           body:JSON.stringify({comment:total})
-
         })
         try{
           const info = await data.json()
-         
-          Result()
+          if (!info.auth)
+          {
+            setshow(true)
+            setDisable(false)
+            setDispay(false)
+            return 
+          }
+          Check(info.no)
           resetForm()
-          setDisable(false)
-          setDispay(false)
+          setTimeout(() => {
+            setreply({mgs:"",id:"", re:true})
+            setDisable(false)
+            setDispay(false)
+            
+          }, 2000);
+      
         }
         catch(e)
         {
@@ -66,33 +90,17 @@ const Commentss = ({url, comment_display, disable, setDispay,setDisable,Result ,
         return(
           <div className=' w-full'>
        <div className=' flex w-full items-center justify-between'>
+       
         <h1 className=' text-white font-bold text-xl mb-5'>Comment</h1>
-        <div className='relative' ><div onClick={()=>setshow(!show)} className='py-2 text-white rounded-md cursor-pointer hover:bg-yellow-500 px-6 bg-blue-500 font-bold '>Title Link</div>
-        {show&&<div  className=' absolute  w-[570px] rounded-lg z-40  top-10 right-0 bg-[#0f2236]'>
-          <div className=" w-full flex flex-col px-3 ">
-           <div className='mb-3 flex flex-col justify-center'> <label className='text-white  mb-2 mt-3'>Title</label>
-          <input type='text' className="   text-white h-9 px-2 bg-[#03091A]  border-[1px] outline-none  rounded-lg w-full" value={probs.values.titles} onChange={probs.handleChange('titles')}/></div>
-          <div className='mb-5 flex flex-col'><label className=' text-white  mb-2'>Link</label>
-          <input type='text' className=" h-9  text-white px-2 bg-[#03091A] border-white border-[1px] outline-none rounded-lg w-full" value={probs.values.link} onChange={probs.handleChange('link')}/></div>
-          <div className='mb-5 flex flex-col'><label className=' text-white  mb-2'>Comment</label>
-          <textarea rows={6} value={probs.values.wordings} onChange={probs.handleChange('wordings')}  className=' text-white px-2 bg-[#03091A] border-white border-[1px]  mb-4 outline-none rounded-lg w-full'/></div>
-          <div className=' flex justify-center mb-4'><input type='submit' className=' bg-red-600 text-white px-9 py-2 rounded-3xl font-semibold cursor-pointer' value="CREATE"  onClick={probs.handleSubmit} /></div>
-          </div>
-          </div>}</div>
        </div>
+       <div className=' mb-1 h-5'>{shows &&<p className=' text-red-500 font-bold '>PLEASE LOGIN</p>}</div>
       <div>
     <div className='border-[1px] relative border-gray-600 mb-20'>
-      {comment_display&&<div className=' absolute w-full h-full flex justify-end items-end p-5 bg-black  bg-opacity-30 z-30'>
-          <div >
-  <div className=' w-10 h-10 rounded-full border-t-4 border-t-[#03091A] border-yellow-600 border-x-4 border-b-4 animate-spin flex justify-center items-center'>
-  <div className=' w-6 h-6 rounded-full border-b-4 border-b-[#03091A] transform -scale-y-180 border-red-600 border-x-4 border-t-4 animate-spin'></div>
-  </div>
-  </div>
-          </div>}
-          <ReactQuill theme="snow" value={probs.values.chat} onChange={probs.handleChange('chat')}  className=' h-40 text-white'/>
+          <textarea rows={7}  value={probs.values.chat} onChange={probs.handleChange('chat')}  className=' h-40 text-white w-full bg-transparent p-3 outline-none'/>
+          
         
         </div>
-        <div><input type='submit' className=' bg-red-600 text-white px-9 py-2 rounded-3xl font-semibold cursor-pointer' onClick={probs.handleSubmit} value="SUBMIT" /></div>
+        <div className=' flex justify-center lg:justify-start'><input type='submit' className=' bg-red-600 text-white px-9 py-2 rounded-3xl font-semibold cursor-pointer' onClick={probs.handleSubmit} value="SUBMIT" /></div>
 
       </div></div>)}}
     </Formik>

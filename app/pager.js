@@ -1,11 +1,11 @@
 import React from 'react'
 import { FaCaretRight, FaCaretLeft } from "react-icons/fa6";
 
-const Pager = ({number,Move,array,page,type,Right,Left}) => {
+const Pager = ({number,Move,array,page,type,Right,Left, div}) => {
   return (
-    <div className=' w-full  flex justify-between'>
-    <div className=' py-1'>
-    <p className=''>{type} per page <span className=' text-blue-500 mx-1'>20 movies </span>in total</p>
+    <div className=' w-full py-2 sm:py-0  flex flex-col sm:flex-row items-center sm:justify-between'>
+    <div className=' py-3 sm:py-1'>
+    <p className=''>{type} per page <span className=' text-blue-500 mx-1'>{div} {type.toLowerCase()} </span>in total</p>
     </div>
     <section className=' flex items-center'>
       <p className=' pr-4'>Page {number} of <span className=' text-blue-500'>{page}</span>:</p>
@@ -14,11 +14,14 @@ const Pager = ({number,Move,array,page,type,Right,Left}) => {
       {number > 1 && <FaCaretLeft className=' mr-3 text-blue-500 cursor-pointer'  onClick={Left}/>}
       <div className=' flex items-center'>
         {array.map((e,i,a)=>{
-          return(<>
+          return(<div key={i}>
           {(e < 4 || i == a.length - 1)?
-            <p className=' mr-3 cursor-pointer' style={e == number?{color:"blue"}:{color:""}} key={i} onClick={()=>{Move(e)}}>{e}</p>:
-            <p className=' mr-3'>.</p>}
-            </>
+            <p className=' mr-3 cursor-pointer' style={e == number?{color:"blue"}:{color:""}}  onClick={()=>{
+              if(e != number)
+              {
+              Move(e)}}}>{e}</p>:
+            <p className=''></p>}
+            </div>
           )
         }) 
         }

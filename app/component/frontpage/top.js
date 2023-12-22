@@ -13,10 +13,11 @@ const Top = ({Datas}) => {
     const router = useRouter()
 const Info =()=>{ 
    const info = Datas.map((e, index)=>{
+    const [image, setimage] = useState(e.image)
   
         return(
-           <div  key={e._id}>{no ==  index && <motion.div initial={{opacity:0, scale:0.9}} animate={{opacity:1,scale:1,transition:{duration:1}}} className=' flex justify-between  items-start'>
-                <section className=' flex items-center '>
+           <motion.div initial={{opacity:0, scale:0.9}} animate={{opacity:1,scale:1,transition:{duration:1}}} key={e._id} style={no ==  index ? {display:"block"}:{display:"none"}}  className=' w-full'> <div  className=' flex justify-center lg:justify-between  w-[100%] items-start'>
+                <section className=' flex items-center  '>
                   
                     <div>
                     <div className=' flex mb-3'>
@@ -25,12 +26,12 @@ const Info =()=>{
                         <p  className=' bg-orange-600 text-white font-semibold text-xs px-2 py-1 rounded-sm'>{e.type.c}</p>
                     </div>
                     <div className=' w-3/4 mb-5'>
-                        <h1 className=' text-6xl font-bold text-white'>{e.title}<span className=' text-4xl font-normal ml-3 text-[#A5AFBE]'>{e.year}</span></h1>
+                        <h1 className=' text-5xl lg:text-6xl font-bold text-white'>{e.title}<span className=' text-2xl lg:text-4xl font-normal ml-3 text-[#A5AFBE]'>{e.year}</span></h1>
                     </div>
                     <div className='group text-red-600 hover:text-yellow-500 cursor-pointer'  onClick={() => router.push(e.trailer)}>
                             <section className=' flex items-center'><div className=' text-sm w-12 h-12 border-[1px] group-hover:border-yellow-500 rounded-full flex justify-center items-center border-red-600 mr-3'><FaPlay /></div><p className=' font-semibold'>WATCH TRAILER</p></section>
                     </div>
-                    <div className=' mt-5 mb-5 flex items-center'>
+                    <div className=' mt-5 mb-5 flex flex-wrap items-center'>
                         <div className=' flex items-center'><div className=' text-orange-300 mr-1'><FaStar /></div><div className=' font-semibold text-xl'>{e.rating} <span className=' text-xs font-bold'>/10</span></div></div>
                         <div className=' text-4xl'><LuDot /></div>
                         <div className='  font-medium'>Run Time: {e.runtime}</div>
@@ -42,9 +43,9 @@ const Info =()=>{
                    <Button name="DOWNLOAD" url={`/showcase/${e._id}`}/>
                     </div>
                 </section>
-                <section className=' flex items-center'>
-                    <div><div className=' w-[280px] bg-cover h-[400px] bg-center overflow-hidden' style={{backgroundImage:`url(${e.image})`}}></div></div></section>
-            </motion.div>}</div> 
+                <section className=' lg:flex items-center hidden'>
+                    <div><div className=' w-[280px] bg-cover h-[400px] bg-center overflow-hidden' style={{backgroundImage:`url(${image})`}} onError={()=>setimage('/profileimage/mv-it4.jpg')}></div></div></section>
+            </div></motion.div> 
         )
     })
     return info
@@ -63,13 +64,14 @@ const Left =()=>{
 }
   return (
     <div className=" bg-[url('/slider-bg2.jpg')] pt-48 pb-10  w-[100vw] overflow-hidden text-[#A5AFBE] flex justify-center  bg-cover bg-no-repeat ">
-        <div className=' w-9/12 flex items-center'>
-        <div className=' text-5xl mr-20 cursor-pointer hover:text-yellow-500' onClick={Left}><FaChevronLeft /></div>
+        <div className=' w-[95%] 2xl:w-9/12 flex items-center justify-between'>
+        <div className=' text-5xl mr-20 cursor-pointer hover:text-yellow-500 hidden md:block lg:hidden xl:block' onClick={Left}><FaChevronLeft /></div>
             <Info/>
-        <div className=' text-5xl ml-20 cursor-pointer hover:text-yellow-500'  onClick={Right}><FaChevronRight/></div>
+        <div className=' text-5xl ml-20 cursor-pointer hover:text-yellow-500 hidden md:block lg:hidden xl:block'  onClick={Right}><FaChevronRight/></div>
         </div>
     </div>
   )
 }
 
 export default Top
+
