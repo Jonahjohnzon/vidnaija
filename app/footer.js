@@ -28,7 +28,7 @@ const Footer = ({date}) => {
                 </section>
                 <section className=' mb-5 lg:mb-0'>
                 <header className='font-bold text-white sm:text-xl lg:mb-4' >Newsletter</header>
-                <p className='mb-3 w-60 xl:w-full text-xs sm:text-base  '>Subscribe to our newsletter system now
+                <p className='mb-3 sm:w-60 xl:w-full text-xs sm:text-base  '>Subscribe to our newsletter system now
                  to get latest news from us</p>
                  <form className=' flex flex-col items-start'>
                     <input type='text' placeholder='Enter your email..' className=' w-full lg:w-60 xl:w-80 h-10  bg-transparent border-[#A5AFBE] border-[1px] px-3 mb-3  text-xs sm:text-sm'/>
