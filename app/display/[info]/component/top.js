@@ -29,6 +29,7 @@ const Top = ({info, Searchbar, settype}) => {
     }}>
       {(props)=>{
         return(
+          <form>
         <div className=' flex justify-end flex-col w-full items-center py-32 relative z-40'>
         <div className=' w-[90%] sm:w-3/4 2xl:w-1/2 mb-4 flex items-center'>{series||<select onChange={(e)=>{settype(e.target.value)}} className='h-14 border-y-4 sm:cursor-pointer  outline-none border-l-4 border-r-[1px] border-[#020B19] bg-[#243651] px-7 text-white'>
           <option value={'hollywood'}>Hollywood</option>
@@ -40,7 +41,8 @@ const Top = ({info, Searchbar, settype}) => {
           </div>
             <header className=' font-bold text-2xl sm:text-4xl text-white mb-5'>MOVIE LISTING - {info.toUpperCase()}</header>
             <div className=' flex items-center'><Link href={"/"}><p className=' mr-3 text-blue-500 sm:cursor-pointer'>HOME</p></Link> <p className='text-xs mr-3'><FaChevronRight/></p><p>{info.toUpperCase()}</p></div>
-        </div>)}}
+        </div>
+        </form>)}}
         </Formik>
     </main>
   )
