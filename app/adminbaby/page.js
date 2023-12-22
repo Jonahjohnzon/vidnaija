@@ -14,8 +14,8 @@ const page = () => {
         password:yup.string().min(1).max(15).required().label('Password')
     })
   return (
-    <main className=' h-[100vh] flex justify-center items-center  w-full sm:pt-0 pt-20'>
-        <div className=' flex flex-col items-center justify-center py-5 sm:py-0 sm:h-[70%] w-full  sm:w-[500px] bg-white'>
+    <main className=' h-[100vh] flex justify-center items-center fixed z-50  w-full bg-[#03091A]'>
+        <div className=' flex flex-col items-center justify-center py-5 sm:py-0 h-full sm:h-[70%] w-full  sm:w-[500px] bg-white'>
             <div className='mb-5 flex flex-col items-center'>
             <header className=' text-black mb-2 font-bold text-3xl'>ADMIN</header>
             {show && <p className='text-red-500 text-center font-semibold'>{result}</p>}

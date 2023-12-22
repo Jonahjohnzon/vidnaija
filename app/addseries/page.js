@@ -94,7 +94,7 @@ return (
                                         {submit&&<Episode arr={arr} props={props.handleSubmit} sub={setsubmit} setArr={setarr}/>}
                                       </div>
                               <div className='px-10 flex flex-wrap justify-between items-center mb-10'>
-                              <div className=' flex items-center justify-between  mb-5 lg:mb-0'><p className=' mr-2'>CATEGORY: </p><div><select value={props.values.category} onChange={props.handleChange('category')} className=' bg-transparent border-gray-100 h-9 border-[1px] border-opacity-30 text-white  w-60 lg:w-80'> 
+                              <div className=' flex items-center justify-between  mb-5 lg:mb-0'><p className=' mr-2'>CATEGORY: </p><div><select value={props.values.category} onChange={props.handleChange('category')} className=' bg-transparent border-gray-100 h-9 border-[1px] border-opacity-30 text-white  sm:w-60 lg:w-80'> 
                                     {Cate.map((e)=>{
                                         return(
                                             <option className='bg-black' value={e}>{e}</option>

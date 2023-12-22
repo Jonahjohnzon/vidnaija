@@ -92,7 +92,7 @@ const Movie = ({obj,id, setload, Gets}) => {
                         return(
                             <div className=' px-10 text-white text-xs lg:text-sm'>
                                 <div className=' flex flex-wrap justify-between items-center mb-10'>
-                                <div className=' flex items-center justify-between mb-5 lg:mb-0'><p className=' mr-2'>CATEGORY: </p><div><select value={props.values.category} onChange={props.handleChange('category')} className=' bg-transparent border-gray-100 h-9 border-[1px] border-opacity-30 text-white w-60 lg:w-80'> 
+                                <div className=' flex items-center justify-between mb-5 lg:mb-0'><p className=' mr-2'>CATEGORY: </p><div><select value={props.values.category} onChange={props.handleChange('category')} className=' bg-transparent border-gray-100 h-9 border-[1px] border-opacity-30 text-white  sm:w-60 lg:w-80'> 
                                     {Cate.map((e)=>{
                                         return(
                                             <option className='bg-black' value={e}>{e}</option>
@@ -117,12 +117,12 @@ const Movie = ({obj,id, setload, Gets}) => {
                                   <div className=' flex flex-col sm:flex-row  justify-center mb-20 items-center '><p className=' mr-2'>RATING: </p><form className='w-full'><input type='number' min={0} max={10} placeholder='* * * * *' className='w-full sm:w-96 h-9 px-3 bg-transparent border-[1px] border-gray-200 border-opacity-25' value={props.values.rating} onChange={props.handleChange("rating")}/><ErrorMessage name='rating' component='div' className='text-red-500 text-sm mt-1' /></form></div>
                                   
                                   </div>
-                                    <div className=' flex justify-center mb-4'><p className='px-40 py-2 bg-red-500 text-white font-bold whitespace-nowrap'>LOW DOWNLOAD EDIT</p></div>
+                                    <div className=' flex justify-center mb-4'><p className=' px-10 sm:px-40 py-2 bg-red-500 text-white font-bold whitespace-nowrap'>LOW DOWNLOAD EDIT</p></div>
                                     <div className=' flex justify-between mb-10 items-center  flex-wrap'>
                                     <div className=' flex flex-col sm:flex-row  justify-between items-center mb-5 lg:mb-0'><p className=' mr-2'>LINK: </p><form className='w-full'><input type='text' placeholder='* * * * *' className='w-full sm:w-96 h-9 px-3 bg-transparent border-[1px] border-gray-200 border-opacity-25' value={low} onChange={(e)=>setlow(e.target.value)}/></form></div>
                                     <div className=' flex flex-col sm:flex-row  justify-between items-center mb-5 lg:mb-0'><p className=' mr-2'>SIZE: </p><form className='w-full'><input type='text' placeholder='* * * * *' className='w-full sm:w-96 h-9 px-3 bg-transparent border-[1px] border-gray-200 border-opacity-25' value={sizelow} onChange={(e)=>setsizelow(e.target.value)}/></form></div>
                                     </div>
-                                    <div className=' flex justify-center mb-4'><p className='px-40 py-2 bg-red-500 text-white font-bold whitespace-nowrap'>HIGH DOWNLOAD EDIT</p></div>
+                                    <div className=' flex justify-center mb-4'><p className=' px-5 sm:px-40 py-2 bg-red-500 text-white font-bold whitespace-nowrap'>HIGH DOWNLOAD EDIT</p></div>
                                     <div className=' flex justify-between mb-10 items-center  flex-wrap'>
                                     <div className=' flex flex-col sm:flex-row  justify-between items-center mb-5 lg:mb-0'><p className=' mr-2'>LINK: </p><form className='w-full'><input type='text' placeholder='* * * * *' className='w-full sm:w-96 h-9 px-3 bg-transparent border-[1px] border-gray-200 border-opacity-25' value={high} onChange={(e)=>sethigh(e.target.value)}/></form></div>
                                     <div className=' flex flex-col sm:flex-row  justify-between items-center mb-5 lg:mb-0'><p className=' mr-2'>SIZE: </p><form className='w-full'><input type='text' placeholder='* * * * *' className='w-full sm:w-96 h-9 px-3 bg-transparent border-[1px] border-gray-200 border-opacity-25' value={sizehigh} onChange={(e)=>setsizehigh(e.target.value)}/></form></div>
