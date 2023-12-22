@@ -44,7 +44,7 @@ const Showcase = ({params}) => {
        myArray.push(i);
        }
         setarrays(myArray)
-        setload(false)
+      
       }
         catch(e)
         { console.log(e)}
