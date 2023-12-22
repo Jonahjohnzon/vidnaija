@@ -1,7 +1,6 @@
 "use client";
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import { FaChevronDown } from "react-icons/fa6";
-import Button from "./component/frontpage/button";
 import { useRouter } from 'next/navigation'
 import Sign from "./sign";
 import Imagesprofile from "./component/frontpage/images";
@@ -28,7 +27,7 @@ const Navbar = () => {
   const handleNavigation = (e) => {
     const window = e.currentTarget;
     const newY = window.scrollY;
-    if (newY <= 30) {
+    if (newY <= 10) {
       setcolor(true);
     } else {
       setcolor(false);
@@ -166,7 +165,7 @@ const Navbar = () => {
           {slide || <div className="  fixed top-0 z-50 min-h-[70vh] w-[100vw]  bg-[#111E34]">
       <div className=" w-full flex flex-col items-center">
         <div className=" flex justify-between w-full items-center px-4 py-4"><div className=" flex items-end mr-10 xl:mr-20">
-            <img src="/logos.png" className=" w-24 " />
+            <img src="/logos.png" className=" w-12 sm:w-24 " />
           </div>
           <div onClick={()=>setslide(!slide)} className="text-4xl text-white"><IoMenu /></div>
           </div>
@@ -217,7 +216,7 @@ const Navbar = () => {
       <div className=" flex  justify-between w-11/12 relative z-40">
         <section className=" flex w-full  items-center ">
           <div className=" flex items-end mr-10 xl:mr-20">
-            <img src="/logos.png" className=" w-24" />
+            <img src="/logos.png" className=" w-12 sm:w-24" onClick={()=>{router.push('/')}}/>
           </div>
           <ul className=" lg:flex font-bold text-sm w-full xl:w-11/12 2xl:w-8/12 justify-between hidden">
             <li onClick={()=>router.push('/')}><div className=" cursor-pointer hover:text-yellow-500 flex items-center  h-20 justify-center" style={{color:h}} onClick={()=>Hom('h')}>HOME</div></li>

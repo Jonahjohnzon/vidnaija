@@ -29,7 +29,7 @@ const Second = ({header,Datas}) => {
         return info
     }
   return (
-    <main className=' pb-10 mb-24'>
+    <main className=' pb-10 mb-5 sm:mb-24'>
         <div>
             <header className=' font-bold text-2xl text-white mb-5 flex items-center justify-between'><div>{header}</div><div className='flex items-center text-sm text-[#A5AFBE]'><BiSolidGrid  className=' text-yellow-500'/></div></header>
             <ul className=' font-bold text-sm flex items-center mb-8'>

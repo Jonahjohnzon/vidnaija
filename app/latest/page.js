@@ -38,9 +38,9 @@ const page = () => {
                   const tit = e.title+ "  " + `S${s}E${ep}`
                   return(
                     
-                    <div className=' flex flex-col items-center group  mb-5' key={e._id}>
+                    <div className=' flex flex-col items-center group  mb-5 px-2 ' key={e._id}>
                       <div><div style={{backgroundImage:`url(${e.image})`}} className=' rounded-full border-white border-[2px] group-hover:border-yellow-500 w-[100px]  flex justify-center items-center h-[100px] bg-cover group cursor-pointer' onClick={()=>router.push(`/showcase/${e._id}`)}></div></div>
-                      <div  className=' mb-5 text-white  cursor-pointer group-hover:text-yellow-500 whitespace-normal' onClick={()=>router.push(`/showcase/${e._id}`)}>{tit.toUpperCase()}</div></div>
+                      <div  className=' mb-5 text-white  cursor-pointer group-hover:text-yellow-500 whitespace-normal ' onClick={()=>router.push(`/showcase/${e._id}`)}>{tit.toUpperCase()}</div></div>
                   )
                 })
                   

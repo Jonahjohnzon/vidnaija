@@ -23,7 +23,7 @@ const Login = () => {
                 <Formik
                 validationSchema={Schema}
                 initialValues={{email:"", password:""}}
-                onSubmit={async(form,{resetForm})=>{
+                onSubmit={async(form)=>{
                        setload(true)
                        try{ const data = await fetch('http://79.133.57.156:8000/loginIn',{
                             method:'POST',

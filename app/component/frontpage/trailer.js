@@ -55,7 +55,7 @@ const Trailer = ({trailer, lat}) => {
    
     const [no,setno] = useState(trailer[0]._id)
   return (
-    <main className=' w-full py-20 bg-[#07101F]'>
+    <main className=' w-full py-10 sm:py-20 bg-[#07101F]'>
         <div className=' flex flex-col items-center justify-center' >
         <header className=' font-bold text-2xl text-white mb-5 flex text-start  w-[90%]  3xl:w-[75%]'>UPCOMING MOVIES</header> 
                 <div className=' w-[90%] 3xl:w-[80%] flex flex-col lg:flex-row justify-between items-center '>

@@ -69,7 +69,7 @@ const Body = ({ data, seano, setseason,seasonno,  setload }) => {
               <div className=" font-medium ">Release: {data.release}</div>
             </div>
             <div className=" font-medium mb-4 ">Rated: {data.rated}</div>
-            <p className=" text-sm mb-5 text-yellow-500  underline">
+            <p className=" text-xs text-center sm:text-start sm:text-sm mb-5 text-yellow-500  underline">
              NOTE: WE DO NOT HOST ANY MOVIE ON OUR SERVER, WE JUST PROVIDE LINKS{" "}
             </p>
             {series || (<div className=" flex flex-col lg:flex-row">
