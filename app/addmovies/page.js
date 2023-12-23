@@ -129,11 +129,47 @@ const Movie = () => {
                                     <div className=' flex flex-col sm:flex-row  justify-between items-center  mb-5 lg:mb-0'><p className=' mr-2'>RELEASE: </p><form className='w-full'><input type='date' placeholder='* * * * *' className='w-full sm:w-96 h-9 px-3 bg-transparent border-[1px] border-gray-200 border-opacity-25' value={props.values.release} onChange={props.handleChange("release")}/><ErrorMessage name='release' component='div' className='text-red-500 text-sm mt-1' /></form></div>
                                     </div>
                                     <div className=' flex justify-between mb-10 items-center  flex-wrap'>
-                                    <div className=' flex flex-col sm:flex-row  justify-between items-center  mb-5 lg:mb-0'><p className=' mr-2'>RATED: </p><form className='w-full'><input type='text' placeholder='* * * * *' className='w-full sm:w-96 h-9 px-3 bg-transparent border-[1px] border-gray-200 border-opacity-25' value={props.values.rated} onChange={props.handleChange("rated")}/><ErrorMessage name='rated' component='div' className='text-red-500 text-sm mt-1' /></form></div>
+                                    <div className='flex flex-col sm:flex-row justify-between items-center mb-5 lg:mb-0'>
+  <p className='mr-2'>RATED: </p>
+  <form className='w-full'>
+    <select
+      value={props.values.rated}
+      onChange={props.handleChange("rated")}
+      className='w-full sm:w-96 h-9 px-3 bg-transparent border-[1px] border-gray-200 border-opacity-25'
+    >
+      <option value='' label='Select Rating' className=' bg-black'/>
+      <option value='PG-13' label='PG-13' className=' bg-black' />
+      <option value='G' label='G' className=' bg-black'/>
+      <option value='PG' label='PG' className=' bg-black'/>
+      <option value='R' label='R' className=' bg-black'/>
+      <option value='NC-17' label='NC-17' className=' bg-black'/>
+      <option value='Not Rated' label='Not Rated' className=' bg-black'/>
+    </select>
+    <ErrorMessage name='rated' component='div' className='text-red-500 text-sm mt-1' />
+  </form>
+</div>
                                     <div className=' flex flex-col sm:flex-row  justify-between items-center  mb-5 lg:mb-0'><p className=' mr-2'>OVERVIEW: </p><form className='w-full'><input type='text' placeholder='* * * * *' className='w-full sm:w-96 h-9 px-3 bg-transparent border-[1px] border-gray-200 border-opacity-25' value={props.values.overview} onChange={props.handleChange("overview")}/><ErrorMessage name='overview' component='div' className='text-red-500 text-sm mt-1' /></form></div>
                                     <div className=' flex flex-col sm:flex-row  justify-between items-center  mb-5 lg:mb-0'><p className=' mr-2'>TRAILER: </p><form className='w-full'><input type='text' placeholder='* * * * *' className='w-full sm:w-96 h-9 px-3 bg-transparent border-[1px] border-gray-200 border-opacity-25' value={props.values.trailer} onChange={props.handleChange("trailer")}/><ErrorMessage name='trailer' component='div' className='text-red-500 text-sm mt-1' /></form></div>
                                     </div>
-                                    <div className=' flex flex-col sm:flex-row  justify-center mb-20 items-center '><p className=' mr-2'>RATING: </p><form className='w-full'><input type='number' min={0} max={10} placeholder='* * * * *' className='w-full sm:w-96 h-9 px-3 bg-transparent border-[1px] border-gray-200 border-opacity-25' value={props.values.rating} onChange={props.handleChange("rating")}/><ErrorMessage name='rating' component='div' className='text-red-500 text-sm mt-1' /></form></div>
+                                    <div className='flex flex-col sm:flex-row justify-center mb-20 items-center'>
+  <p className='mr-2'>RATING: </p>
+  <form className='w-full'>
+    <input
+      type='text'
+      placeholder='* * * * *'
+      className='w-full sm:w-96 h-9 px-3 bg-transparent border-[1px] border-gray-200 border-opacity-25'
+      value={props.values.rating}
+      onChange={(e) => {
+        const { value } = e.target;
+        // Allow only two digits and add a dot after the first digit
+        const finalValue = value.slice(0, 2).replace(/[^0-9]/g, '').replace(/(\d)(?=\d)/, '$1.');
+
+        props.handleChange("rating")({ target: { value: finalValue } });
+      }}
+    />
+    <ErrorMessage name='rating' component='div' className='text-red-500 text-sm mt-1' />
+  </form>
+</div>
                                     <div className=' flex justify-center mb-4'><p className='px-2 sm:px-40 py-2 bg-red-500 text-white whitespace-nowrap font-bold'>LOW DOWNLOAD EDIT</p></div>
                                     <div className=' flex justify-between mb-10 items-center  flex-wrap'>
                                     <div className=' flex flex-col sm:flex-row  justify-between items-center mb-5 lg:mb-0'><p className=' mr-2'>LINK: </p><form className='w-full'><input type='text' placeholder='* * * * *' className='w-full sm:w-96 h-9 px-3 bg-transparent border-[1px] border-gray-200 border-opacity-25' value={low} onChange={(e)=>setlow(e.target.value)} required/></form></div>
