@@ -10,7 +10,7 @@ const Page = ({searchParams}) => {
   return (
     <div className=' min-h-[100vh] pt-40 pb-20 flex justify-center items-center'>
       <div className=' flex flex-col justify-center items-centers'>
-        <div className='flex justify-center mb-10'><img src='/logos.png' className=' sm:w-full w-12'/></div>
+        <div className='flex justify-center mb-10'><img src='/logos.png' className=' sm:w-24 w-12'/></div>
       <div className=' flex justify-center mb-10'><Button name={"DOWNLOAD"} url={searchParams.uri}/></div>
       <div className='px-5'><Note/></div>
       </div>
