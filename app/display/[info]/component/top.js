@@ -29,7 +29,7 @@ const Top = ({info, Searchbar, settype}) => {
     }}>
       {(props)=>{
         return(
-          <form>
+          <form className=' w-full'>
         <div className=' flex justify-end flex-col w-full items-center py-32 relative z-40'>
         <div className=' w-[90%] sm:w-3/4 2xl:w-1/2 mb-4 flex items-center'>{series||<select onChange={(e)=>{settype(e.target.value)}} className='h-14 border-y-4 sm:cursor-pointer  outline-none border-l-4 border-r-[1px] border-[#020B19] bg-[#243651] px-7 text-white'>
           <option value={'hollywood'}>Hollywood</option>
