@@ -106,7 +106,7 @@ const   Reply=()=>{
                  <div className=' h-[1px] w-full bg-gray-200 bg-opacity-20'></div>
                  <div className=' flex  justify-between items-center mt-2'>
                <section className=' text-sm  items-center flex'>
-                {info.reply.length < 2&&<p className=' mr-5 text-lg sm:cursor-pointer hover:text-yellow-500'  onClick={Reply}><FaReply /></p>} 
+                {info.reply.length < 1&&<p className=' mr-5 text-lg sm:cursor-pointer hover:text-yellow-500'  onClick={Reply}><FaReply /></p>} 
           
                 </section>
                 <div className=' flex items-center'><p>Posted: </p><TimeAgo datetime={info.data} className=' ml-2'/></div>
