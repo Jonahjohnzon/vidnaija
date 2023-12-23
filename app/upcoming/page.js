@@ -9,7 +9,7 @@ const page = () => {
     const Schema = yup.object({
         title:yup.string().label('Title').max(30).required(),
         src:yup.string().label('Src').required(),
-        image:yup.string().label('Src').required()
+        image:yup.string().label('image').required()
 
   
       })
