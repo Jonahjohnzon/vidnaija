@@ -43,7 +43,7 @@ const Navbar = () => {
         return
       }
      
-      const info = await fetch(`http://79.133.57.156:8000/getUser/${logged._id}`)
+      const info = await fetch(`https://vidnaija.com.ng:8443/getUser/${logged._id}`)
       const data = await info.json()
       if(data != null)
       {
