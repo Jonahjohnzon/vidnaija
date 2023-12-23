@@ -27,7 +27,7 @@ const Gets = async()=>{
       router.push('/')
   }
         try{
-          const data = await fetch(`http://79.133.57.156:8000/getUser/${log}`)
+          const data = await fetch(`http://localhost:8000/getUser/${log}`)
         const result = await data.json()
         if(result)
       {
