@@ -96,10 +96,10 @@ const Episode = ({ arr, setArr, props, sub }) => {
             </div>
           ))}
         </div>
-        <button onClick={handleAddSeason} className='bg-blue-400 mr-2 px-5 py-1 cursor-pointer'>
+        <button onClick={handleAddSeason} className=' bg-violet-700 font-bold mr-2 px-5 py-1 cursor-pointer'>
           ADD SEASON
         </button>
-        <input type='submit' onClick={props} className='bg-blue-400 px-5 py-1 cursor-pointer' value={'SUBMIT'} />
+        <input type='submit' onClick={props} className='bg-red-500 ml-5 font-bold px-5 py-1 cursor-pointer' value={'SUBMIT'} />
       </div>
     </main>
   );
