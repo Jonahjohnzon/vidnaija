@@ -80,6 +80,7 @@ return (
                       body:JSON.stringify(total)
                     })
                     const result = await data.json()
+                    setSelectedGenres([])
                     resetForm()
                     setsubmit(false)
                     setloading(false)

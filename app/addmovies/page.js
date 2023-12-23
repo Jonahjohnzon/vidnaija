@@ -93,6 +93,11 @@ const Movie = () => {
                       const result = await data.json()
                       if(result)
                       {
+                        setlow()
+                        setsizelow()
+                        setsizehigh()
+                        sethigh()
+                        setSelectedGenres([])
                         setload(false)
                         resetForm()
                       }
