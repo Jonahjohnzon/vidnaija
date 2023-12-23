@@ -19,7 +19,7 @@ export default function Home() {
  const [trail, settrail] = useState([])
  const [lat, setlat] = useState([])
   const First =async()=>{
-    const url = "https://vidnaija.com.ng:8000/getcate"
+    const url = "https://vidnaija.com.ng:8443/getcate"
     try{
     const games = await fetch(url)
     const Data = await games.json()
