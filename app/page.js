@@ -30,7 +30,7 @@ export default function Home() {
     const secondinfo  = Data?.hollywood
     const thirdinfo  = Data?.bollywood
     const fourthinfo  = Data?.tvshows
-    const ani = Data.datak
+    const ani = Data?.datak
     const trailer = Data?.trailer
     const latest = Data?.late
     
