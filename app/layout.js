@@ -15,6 +15,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className=' scrollbar-thumb-[#141935] scrollbar-[#03091A] scrollbar-thin select-none'>
+      <head><meta name="monetag" content="7aeece893954aa98d10a7f34691f1d31"/></head>
       <body className={dosis.className}>
       <link rel="icon" href="/logo.png" sizes="any" />
         <Navbar/>
