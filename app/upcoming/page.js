@@ -7,7 +7,7 @@ import * as yup from 'yup'
 const page = () => {
     const [load, setload] = useState(false)
     const Schema = yup.object({
-        title:yup.string().label('Title').max(30).required(),
+        title:yup.string().label('Title').max(150).required(),
         src:yup.string().label('Src').required(),
         image:yup.string().label('image').required()
 
