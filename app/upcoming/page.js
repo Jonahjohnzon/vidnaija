@@ -21,11 +21,16 @@ const page = () => {
             initialValues={{title:"",src:"",image:""}}
             validationSchema={Schema}
             onSubmit={async(form,{resetForm})=>{
+                const tok = localStorage.getItem('data')
+                if(!tok){
+                  return router.push("/")
+                }
+                const token = JSON.parse(tok).token
                 setload(true)
                 const url ="https://vidnaija.com.ng:8443/upcomingPush"
                 const data = await fetch(url,{
                     method: "POST",
-                    headers: { 'Content-Type': 'application/json' },
+                    headers: { 'Content-Type': 'application/json' ,'auth-token':token },
                     body:JSON.stringify(form)
                   })
                   const re = await data.json()

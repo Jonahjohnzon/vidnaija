@@ -123,6 +123,7 @@ Gets()
                   if(!tok){
                     return router.push("/")
                   }
+                  const token = JSON.parse(tok).token
                   const data = await fetch(`https://vidnaija.com.ng:8443/changePass/${params.id}`,{
                     method:'PUT',
                     headers:{'Content-Type': 'application/json','auth-token':token},
