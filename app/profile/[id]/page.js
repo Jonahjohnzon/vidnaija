@@ -27,7 +27,7 @@ const Gets = async()=>{
       router.push('/')
   }
         try{
-          const data = await fetch(`http://localhost:8000/getUser/${log}`)
+          const data = await fetch(`https://vidnaija.com.ng:8443/getUser/${log}`)
         const result = await data.json()
         if(result)
       {
@@ -66,7 +66,7 @@ Gets()
                   return router.push("/adminbaby")
                 }
                 const token = JSON.parse(tok).token
-                  const data = await fetch(`http://79.133.57.156:8000/pushUsers/${params.id}`,{
+                  const data = await fetch(`https://vidnaija.com.ng:8443/pushUsers/${params.id}`,{
                     method:'PUT',
                     headers:{'Content-Type': 'application/json','auth-token':token},
                     body:JSON.stringify(tot)
@@ -101,7 +101,7 @@ Gets()
                 <Formik
                 initialValues={{cpassword:"",npassword:"",copassword:""}}
                 onSubmit={async(form)=>{
-                  const data = await fetch(`http://79.133.57.156:8000/changePass/${params.id}`,{
+                  const data = await fetch(`https://vidnaija.com.ng:8443/changePass/${params.id}`,{
                     method:'PUT',
                     headers:{'Content-Type': 'application/json'},
                     body:JSON.stringify(form)

@@ -13,7 +13,7 @@ const page = () => {
             initialValues={{title:"",src:"",image:""}}
             onSubmit={async(form,{resetForm})=>{
                 setload(true)
-                const url ="http://79.133.57.156:8000/upcomingPush"
+                const url ="https://vidnaija.com.ng:8443/upcomingPush"
                 const data = await fetch(url,{
                     method: "POST",
                     headers: { 'Content-Type': 'application/json' },

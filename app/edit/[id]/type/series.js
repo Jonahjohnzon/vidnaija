@@ -67,7 +67,7 @@ return (
                   }
                   const token = JSON.parse(tok).token
                   
-                  const url =`http://79.133.57.156:8000/pushSeries/${id}`
+                  const url =`https://vidnaija.com.ng:8443/pushSeries/${id}`
                   const data = await fetch(url,{
                       method: "PUT",
                       headers: { 'Content-Type': 'application/json' ,  'auth-token':token},

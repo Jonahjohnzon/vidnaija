@@ -27,7 +27,7 @@ const Showcase = ({params}) => {
     const id = params?.id
     const Result = async()=>{
       try{
-        const data = await fetch(`http://79.133.57.156:8000/getMovies/${id}?start=${start}&limit=${limit}&season=${seasonno}`)
+        const data = await fetch(`https://vidnaija.com.ng:8443/getMovies/${id}?start=${start}&limit=${limit}&season=${seasonno}`)
         const info = await data.json()
         if(!info)
         {
@@ -122,7 +122,7 @@ const Showcase = ({params}) => {
           </div></div>
           <Pager  number={number} Move={Move} array={arrays} div={div} page={page} type={"Comments"} Right={Right} Left={Left}/>
         </section>
-      <Commentss url={`http://79.133.57.156:8000/postComment/${id}`} forum={false} setreply={setreply} reply={reply}  comment_display={comment_display} setDispay={setDispay}  setload={setload} Check={Check}  setDisable={ setDisable} disable={disable} Result={Result}/>
+      <Commentss url={`https://vidnaija.com.ng:8443/postComment/${id}`} forum={false} setreply={setreply} reply={reply}  comment_display={comment_display} setDispay={setDispay}  setload={setload} Check={Check}  setDisable={ setDisable} disable={disable} Result={Result}/>
         <section  className=' w-full mb-5 mt-40'>
           <div className=' '>
         <Note/>

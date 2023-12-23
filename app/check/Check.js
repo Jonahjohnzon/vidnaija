@@ -7,7 +7,7 @@ export const Gets = async(router,sl) =>{
       return router.push("/")
     }
     const token = JSON.parse(tok)
-    const data = await fetch(`http://79.133.57.156:8000/check/${token._id}`,
+    const data = await fetch(`https://vidnaija.com.ng:8443/check/${token._id}`,
     {
         method:"GET",
         headers:{

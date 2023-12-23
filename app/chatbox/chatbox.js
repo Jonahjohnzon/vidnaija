@@ -17,7 +17,7 @@ const DELETE =async()=>{
     return router.push("/")
   }
   try{
-    const results = await fetch(`http://79.133.57.156:8000/deleteComment/${info._id}?ids=${id}`,{
+    const results = await fetch(`https://vidnaija.com.ng:8443/deleteComment/${info._id}?ids=${id}`,{
     method:'DELETE',
     headers:{'auth-token':result.token }
   })
@@ -43,7 +43,7 @@ const DELETECOMMENT =async(ei)=>{
   }
   
   try{
-    const results = await fetch(`http://79.133.57.156:8000/deleteoneComment/${ei}?ids=${id}`,{
+    const results = await fetch(`https://vidnaija.com.ng:8443/deleteoneComment/${ei}?ids=${id}`,{
     method:'DELETE',
     headers:{'auth-token':result.token }
   })

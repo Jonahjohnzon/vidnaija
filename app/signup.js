@@ -28,7 +28,7 @@ const Signup = () => {
             initialValues={{email:"", password:"", comfirmpassword:"",user_name:""}}
             onSubmit={async(form,{resetForm})=>{
                    setload(true)
-                   try{ const data = await fetch('http://79.133.57.156:8000/userData',{
+                   try{ const data = await fetch('https://vidnaija.com.ng:8443/userData',{
                         method:'POST',
                         headers:{'Content-Type': 'application/json'},
                         body:JSON.stringify(form)

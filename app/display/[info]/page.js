@@ -25,7 +25,7 @@ const Display = ({params}) => {
     const [number, setnumber] = useState(1)
     const div = 20
     const Get =async()=>{
-      const data = await fetch(`http://79.133.57.156:8000/listMovies/${info}?start=${start}&limit=${limit}`)
+      const data = await fetch(`https://vidnaija.com.ng:8443/listMovies/${info}?start=${start}&limit=${limit}`)
       try{
         const data_ = await data.json()
         if(!data_)
@@ -51,7 +51,7 @@ const Display = ({params}) => {
       setsearch(true)
       const inform = form?.search
       setload(true)
-      const data = await fetch(`http://79.133.57.156:8000/Search/${inform}?cate=${info}&type=${type}&start=${start}&limit=${limit}`,{
+      const data = await fetch(`https://vidnaija.com.ng:8443/Search/${inform}?cate=${info}&type=${type}&start=${start}&limit=${limit}`,{
         method: 'GET',
       })
       

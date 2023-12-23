@@ -69,7 +69,7 @@ const Movie = ({obj,id, setload, Gets}) => {
                     const token = JSON.parse(tok).token
                     const total = {...form,...lows,...highs,...cate,...tops}
                     console.log(total)
-                    const url =`http://79.133.57.156:8000/editMovie/${id}`
+                    const url =`https://vidnaija.com.ng:8443/editMovie/${id}`
                     const data = await fetch(url,{
                         method: "PUT",
                         headers: { 'Content-Type': 'application/json' , 'auth-token':token},

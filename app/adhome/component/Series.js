@@ -51,7 +51,7 @@ const Series = ({sl}) => {
     }
     const token = JSON.parse(tok).token
     sl(true)
-    const delet = await fetch(`http://79.133.57.156:8000/deletemovie/${ei}`,{
+    const delet = await fetch(`https://vidnaija.com.ng:8443/deletemovie/${ei}`,{
       method:'DELETE',
       headers:{
         'auth-token':token}

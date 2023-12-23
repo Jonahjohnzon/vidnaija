@@ -17,7 +17,7 @@ const Get = async () =>{
     {
         router.push('/')
     }
-    const data = await fetch(`http://79.133.57.156:8000/notify/${id}`,{
+    const data = await fetch(`https://vidnaija.com.ng:8443/notify/${id}`,{
       method: 'GET',
       headers:{
         'auth-token':logged.token}

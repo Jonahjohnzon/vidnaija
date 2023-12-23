@@ -9,7 +9,7 @@ const page = () => {
   const router = useRouter()
   const Gets =async()=>{
     setload(true)
-    const data = await fetch("http://79.133.57.156:8000/latest")
+    const data = await fetch("https://vidnaija.com.ng:8443/latest")
     const result = await data.json()
     setlist(result)
     setload(false)

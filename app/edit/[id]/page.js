@@ -20,7 +20,7 @@ const page = ({params}) => {
           return router.push("/")
         }
         const token = JSON.parse(tok)
-        const data = await fetch(`http://79.133.57.156:8000/getMovie/${id}?start=${start}&limit=${limit}`,{
+        const data = await fetch(`https://vidnaija.com.ng:8443/getMovie/${id}?start=${start}&limit=${limit}`,{
             method:"GET",
             headers:{
                 'auth-token':token.token}

@@ -73,7 +73,7 @@ return (
                     return router.push("/")
                   }
                   const token = JSON.parse(tok).token
-                  const url ="http://79.133.57.156:8000/postMovie"
+                  const url ="https://vidnaija.com.ng:8443/postMovie"
                   const data = await fetch(url,{
                       method: "POST",
                       headers: { 'Content-Type': 'application/json','auth-token':token },
