@@ -10,7 +10,7 @@ const Signup = () => {
   const [color, setcolor] = useState(true)
   const Schema=yup.object({
     email:yup.string().email().required().label('Email'),
-    user_name:yup.string().min(1).max(25).required().label('UserName'),
+    user_name:yup.string().min(1).max(15).required().label('UserName'),
     password:yup.string().min(1).max(15).required().label('Password'),
     comfirmpassword:yup.string().oneOf([yup.ref('password'),null],'Password must match').required().label('Password Comfirmation')
   })

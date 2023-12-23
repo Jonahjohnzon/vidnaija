@@ -42,7 +42,7 @@ const Control = ({no, setno, trailer}) =>{
     return info
 }
 const Anime =({anime, title})=>{
-    const info = anime.episode.map((e)=>{
+    const info = anime?.episode.map((e)=>{
         return(
             <div key={e._id} className=' text-center mb-3 sm:cursor-pointer'>
             <Link href={{pathname:"/download",query:{uri:e.link}}} className=' font-bold underline text-sm lg:text-base xl:text-xl text-red-500  w-full sm:cursor-pointer hover:text-yellow-500' >{title} - Episode {e.no}</Link>
@@ -53,7 +53,7 @@ const Anime =({anime, title})=>{
 }
 const Trailer = ({trailer, lat}) => {
    
-    const [no,setno] = useState(trailer[0]._id)
+    const [no,setno] = useState(trailer[0]?._id)
   return (
     <main className=' w-full py-10 sm:py-20 bg-[#07101F]'>
         <div className=' flex flex-col items-center justify-center' >
@@ -70,8 +70,8 @@ const Trailer = ({trailer, lat}) => {
                             <header className=' font-bold text-xl mb-2'>LATEST ANIME</header>
                             <div className=' w-full h-[1px] bg-[#A5AFBE] mb-4'> </div>
                             <div className=' flex flex-col items-center'> 
-                                <div style={{backgroundImage:`url(${lat.image})`}} className=' mb-3 w-40 bg-cover bg-center h-40 rounded-md'></div>
-                                <div className=' w-full flex flex-col items-center '><Anime anime={lat?.seasons[lat.seasons.length - 1]} title={lat.title}/></div>
+                                <div style={{backgroundImage:`url(${lat?.image})`}} className=' mb-3 w-40 bg-cover bg-center h-40 rounded-md'></div>
+                                <div className=' w-full flex flex-col items-center '><Anime anime={lat?.seasons[lat.seasons.length - 1]} title={lat?.title}/></div>
                             </div>
                         </div>
                     </section>

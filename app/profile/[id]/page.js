@@ -8,8 +8,17 @@ import Type from './type'
 import { Formik } from 'formik'
 import { FaCheck } from "react-icons/fa";
 import { useRouter } from 'next/navigation'
+import * as yup from 'yup'
 
 const page = ({params}) => {
+  const Schema=yup.object({
+    user_name:yup.string().min(1).max(15).required().label('UserName'),
+  })
+  const Pass = yup.object({
+    cpassword:yup.string().min(1).max(15).required().label('Current Password'),
+    npassword:yup.string().min(1).max(15).required().label('New Password'),
+    copassword:yup.string().oneOf([yup.ref('npassword'),null],'Password must match').required().label('New Password Comfirmation')
+  })
   const router = useRouter()
     const log = params?.id
     const [load,setload] = useState(true)
@@ -17,6 +26,7 @@ const page = ({params}) => {
     const [passdis, setpassdis] = useState(false)
     const [text,settext] = useState()
     const [datalist, setdatelist] = useState()
+    const [masg, setmasg] = useState("")
     const arrays = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23"]
     const ranking = [1,29,55,80,150,300,500]
 const Gets = async()=>{
@@ -24,7 +34,7 @@ const Gets = async()=>{
   const logged = await JSON.parse(logg)
   if(!logged)
   {
-      router.push('/')
+      return router.push('/')
   }
         try{
           const data = await fetch(`https://vidnaija.com.ng:8443/getUser/${log}`)
@@ -55,6 +65,7 @@ Gets()
             <div className=' border-gray-200 mb-20  border-[1px] p-5 border-opacity-10'>
               <Formik
               initialValues={{user_name:datalist.user_name}}
+              validationSchema={Schema}
               onSubmit={async(form)=>{
                 setload(true)
                 const total ={
@@ -63,7 +74,7 @@ Gets()
                 const tot = {...total, ...form}
                 const tok = localStorage.getItem('data')
                 if(!tok){
-                  return router.push("/adminbaby")
+                  return router.push("/")
                 }
                 const token = JSON.parse(tok).token
                   const data = await fetch(`https://vidnaija.com.ng:8443/pushUsers/${params.id}`,{
@@ -72,10 +83,14 @@ Gets()
                     body:JSON.stringify(tot)
                   })
                   const info = await data.json()
-                 
                   if(info.update)
                   {
                     window.location.reload()
+                  }
+                  else{
+                    setmasg(info?.mgs)
+                    setload(false)
+                    
                   }
               }}  
               >
@@ -86,7 +101,9 @@ Gets()
                   <section >
                 
                 <>
-                <div><h1 className=' font-bold text-xl mb-10 text-white'>Change User:</h1></div>
+                <div><h1 className=' font-bold text-xl mb-8 text-white'>Change User:</h1></div>
+                <div className=' text-red-500 mb-2'>{masg}</div>
+                <div className=' text-red-500 text-sm'>{prop.touched.user_name && prop.errors.user_name}</div>
                 <div className=' flex flex-col sm:flex-row justify-between items-center mb-10'><p>USER_NAME: </p><form className=' w-full'><input type='text' placeholder='Change Username' className=' w-full sm:w-96 h-9 px-3 bg-transparent border-[1px] border-gray-200 border-opacity-25' value={prop.values.user_name} onChange={prop.handleChange("user_name")}/></form></div>
                 <div><h1 className=' font-bold text-xl mb-5 text-white'>Change Avatar:</h1></div>
                 <div className=' flex flex-wrap mb-5'>{
@@ -100,14 +117,18 @@ Gets()
               </Formik>
                 <Formik
                 initialValues={{cpassword:"",npassword:"",copassword:""}}
+                validationSchema={Pass}
                 onSubmit={async(form)=>{
+                  const tok = localStorage.getItem('data')
+                  if(!tok){
+                    return router.push("/")
+                  }
                   const data = await fetch(`https://vidnaija.com.ng:8443/changePass/${params.id}`,{
                     method:'PUT',
-                    headers:{'Content-Type': 'application/json'},
+                    headers:{'Content-Type': 'application/json','auth-token':token},
                     body:JSON.stringify(form)
                   })
                   const info = await data.json()
-                  console.log(info)
                   if(info.update)
                   {
                     window.location.reload()
@@ -125,9 +146,12 @@ Gets()
                       <main className=' w-full'>
                                         <div><h1 className=' font-bold text-xl mb-5 text-white'>Change Password:</h1></div>
                                         <div className='h-5 flex justify-center mb-5'>{passdis&&<p className=' text-red-500'>{text}</p>} </div>
-                <div className=' flex flex-col sm:flex-row w-full justify-between items-center mb-10'><p>CURRENT PASSWORD: </p><form className='w-full'><input type='text' placeholder='* * * * *' className='w-full sm:w-96 h-9 px-3 bg-transparent border-[1px] border-gray-200 border-opacity-25' value={prop.values.cpassword} onChange={prop.handleChange("cpassword")}/></form></div>
-                <div className=' flex flex-col sm:flex-row justify-between items-center mb-10'><p>NEW PASSWORD: </p><form className='w-full'><input type='text' placeholder='* * * * *' className='w-full sm:w-96 h-9 px-3 bg-transparent border-[1px] border-gray-200 border-opacity-25' value={prop.values.npassword} onChange={prop.handleChange("npassword")}/></form></div>
-                <div className=' flex flex-col sm:flex-row  justify-between items-center mb-10'><p>COMFIRM PASSWORD: </p><form className='w-full'><input type='text' placeholder='* * * * *' className='w-full sm:w-96 h-9 px-3 bg-transparent border-[1px] border-gray-200 border-opacity-25' value={prop.values.copassword} onChange={prop.handleChange("copassword")}/></form></div>
+                <div className=' flex flex-col sm:flex-row w-full justify-between items-center '><p>CURRENT PASSWORD: </p><form className='w-full'><input type='text' placeholder='* * * * *' className='w-full sm:w-96 h-9 px-3 bg-transparent border-[1px] border-gray-200 border-opacity-25' value={prop.values.cpassword} onChange={prop.handleChange("cpassword")}/></form></div>
+                <div className=' text-red-500 text-sm mb-10'>{prop.touched.cpassword &&prop.errors.cpassword}</div>
+                <div className=' flex flex-col sm:flex-row justify-between items-center '><p>NEW PASSWORD: </p><form className='w-full'><input type='text' placeholder='* * * * *' className='w-full sm:w-96 h-9 px-3 bg-transparent border-[1px] border-gray-200 border-opacity-25' value={prop.values.npassword} onChange={prop.handleChange("npassword")}/></form></div>
+                <div className=' text-red-500 text-sm mb-10'>{prop.touched.npassword &&prop.errors.npassword}</div>
+                <div className=' flex flex-col sm:flex-row  justify-between items-center '><p>COMFIRM PASSWORD: </p><form className='w-full'><input type='text' placeholder='* * * * *' className='w-full sm:w-96 h-9 px-3 bg-transparent border-[1px] border-gray-200 border-opacity-25' value={prop.values.copassword} onChange={prop.handleChange("copassword")}/></form></div>
+                <div className=' text-red-500 text-sm mb-10'>{prop.touched.copassword &&prop.errors.copassword}</div>
                 <div className=' flex flex-col sm:flex-row justify-end items-center mb-20'> <div><input type='submit' className=' bg-red-600 text-white px-9 py-2 rounded-3xl font-semibold cursor-pointer'  value="SUBMIT" onClick={prop.handleSubmit} /></div></div>
                       </main>
                     )
