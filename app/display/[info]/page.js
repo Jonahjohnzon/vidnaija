@@ -103,6 +103,19 @@ const Display = ({params}) => {
     setlimit(e * div)
     setnumber(e)
     }
+
+    useEffect(() => {
+      // Load the external script
+      const script = document.createElement('script');
+      script.src = 'https://mutcheng.net/400/6809566';
+      script.async = true;
+      document.body.appendChild(script);
+  
+      // Clean up the script when the component is unmounted
+      return () => {
+        document.body.removeChild(script);
+      };
+    }, []); 
   return (
     <>
     {loads?<Loading/>:<div>

@@ -9,6 +9,7 @@ import Loading from "./loading";
 
 
 
+
 export default function Home() {
   const [datas,setdatas] = useState()
   const [second, setSecond] = useState()

@@ -96,6 +96,7 @@ const Showcase = ({params}) => {
     }
   
    }
+   
   return (
       <>
     {load?<Loading/>:<>
@@ -111,6 +112,7 @@ const Showcase = ({params}) => {
     <div className='2xl:w-[56%] w-[80%] '>
       <div className=' mb-10 w-full'>
         <Body data={data} seano={seano} setseason={setseason} seasonno={seasonno}  setload={ setload}/>
+        
         </div>
         <section className='mb-10'>
           <div>
