@@ -15,6 +15,18 @@ const page = () => {
     setload(false)
   }
 
+  useEffect(() => {
+    // Load the external script
+    const script = document.createElement('script');
+    script.src = 'https://mutcheng.net/400/6809566';
+    script.async = true;
+    document.body.appendChild(script);
+
+    // Clean up the script when the component is unmounted
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []); 
   useEffect(()=>{
     Gets()
   },[])
@@ -38,9 +50,9 @@ const page = () => {
                   const tit = e.title+ "  " + `S${s}E${ep}`
                   return(
                     
-                    <div className=' flex flex-col items-center group  mb-5 px-2 ' key={e._id}>
-                      <div><div style={{backgroundImage:`url(${e.image})`}} className=' rounded-full border-white border-[2px] group-hover:border-yellow-500 w-[100px]  flex justify-center items-center h-[100px] bg-cover group sm:cursor-pointer' onClick={()=>router.push(`/showcase/${e._id}`)}></div></div>
-                      <div  className=' mb-5 text-white  sm:cursor-pointer group-hover:text-yellow-500 whitespace-normal ' onClick={()=>router.push(`/showcase/${e._id}`)}>{tit.toUpperCase()}</div></div>
+                    <a href={`/showcase/${e._id}`} onClick={()=>window.open("//greewepi.net/4/6809571")} className=' flex flex-col items-center group  mb-5 px-2 ' key={e._id}>
+                      <div><div style={{backgroundImage:`url(${e.image})`}} className=' rounded-full border-white border-[2px] group-hover:border-yellow-500 w-[100px]  flex justify-center items-center h-[100px] bg-cover group sm:cursor-pointer' onClick={()=>router.push()}></div></div>
+                      <div  className=' mb-5 text-white  sm:cursor-pointer group-hover:text-yellow-500 whitespace-normal ' >{tit.toUpperCase()}</div></a>
                   )
                 })
                   

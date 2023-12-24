@@ -2,24 +2,7 @@
 import React,{useEffect} from 'react'
 
 const page = () => {
-  useEffect(() => {
-    // Create a script element
-    const script = document.createElement('script');
-    
-    // Set the attributes for the script
-    script.src = 'https://arvigorothan.com/tag.min.js';
-    script.setAttribute('data-zone', '6809748');
 
-    // Append the script to the body or documentElement (whichever exists)
-    const parentElement = document.body || document.documentElement;
-    parentElement.appendChild(script);
-
-    // Cleanup function to remove the script when the component unmounts
-    return () => {
-      // Remove the script by accessing its parent node
-      parentElement.removeChild(script);
-    };
-  }, []);
   return (
     <div className=' flex justify-center items-center min-h-[100vh] pt-40 pb-20'>
     <div className=' w-[90%] lg:w-[60%] text-white text-xl'>
