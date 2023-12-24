@@ -5,6 +5,7 @@ import Top from "./component/frontpage/top";
 import Trailer from "./component/frontpage/trailer";
 import Animes from "./component/frontpage/animes";
 import Loading from "./loading";
+import { removeScript } from "./remove";
 
 
 
@@ -50,6 +51,7 @@ export default function Home() {
     }
   }
   useEffect(()=>{
+    removeScript()
     First()
   },[])
   return (
