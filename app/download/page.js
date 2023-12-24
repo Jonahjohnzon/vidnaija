@@ -12,7 +12,7 @@ const openWindow = () => {
 const handleButtonClick = () => {
 
   router.push(searchParams.uri)
-  openWindow()
+
 };
   return (
     <div className=' min-h-[100vh] pt-40 pb-20 flex justify-center items-center'>
