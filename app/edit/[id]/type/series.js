@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Formik, ErrorMessage } from 'formik'
 import Episode from '@/app/addseries/Episode'
 import * as yup from 'yup'
