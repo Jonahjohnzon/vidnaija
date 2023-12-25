@@ -35,15 +35,19 @@ const Navbar = () => {
   };
   const Get =async()=>{
       setload(true)
-      const logg= await localStorage.getItem('data')
+      const logg= localStorage.getItem('data')
       const logged = await JSON.parse(logg)
       if(!logged)
       {
         setload(false)
         return
       }
-   
-      const info = await fetch(`https://vidnaija.com.ng:8443/getUser/${logged._id}`)
+      const token = logged.token
+      const info = await fetch(`https://vidnaija.com.ng:8443/getUser/${logged._id}`,{
+        method: 'GET',
+        headers:{
+          'auth-token':token}
+      })
       const data = await info.json()
       if(data?.auth)
       {
