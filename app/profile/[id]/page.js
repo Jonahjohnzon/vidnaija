@@ -39,11 +39,11 @@ const Gets = async()=>{
         try{
           const data = await fetch(`https://vidnaija.com.ng:8443/getUser/${log}`)
         const result = await data.json()
-        if(result)
+        if(result.auth)
       {
         setload(false)
-        setdatelist(result)
-        setSelected(result.profile_image)
+        setdatelist(result.data)
+        setSelected(result.data.profile_image)
 
       }}
         catch(e){

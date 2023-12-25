@@ -42,20 +42,21 @@ const Navbar = () => {
         setload(false)
         return
       }
-     
+   
       const info = await fetch(`https://vidnaija.com.ng:8443/getUser/${logged._id}`)
       const data = await info.json()
-      if(data)
+      if(data?.auth)
       {
-        setsrc(data.profile_image)
+        setsrc(data.data.profile_image)
         setlog(false)
-        setnotify(data.notification)
-        setid(data._id)
+        setnotify(data.data.notification)
+        setid(data.data._id)
         setload(false
           )
      
       }
       else{
+        setload(false)
         setlog(true)
       }
 
