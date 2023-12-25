@@ -40,10 +40,16 @@ const page = () => {
             <div className=' flex flex-wrap justify-between'>
                 {list.map((e)=>{
                   const season = e.seasons.length
-                  const episode = e.seasons[season - 1].episode.length
+                  const episode = e.seasons[season - 1]?.episode.length
                     function padWithZero(number) {
-                  let numberString = number.toString();
-                    return numberString.length === 1 ? '0' + numberString : numberString;
+                  let numberString = number?.toString();
+                  if(numberString)
+                  {
+                    return numberString?.length === 1 ? '0' + numberString : numberString;
+                  }
+                  else{
+                    return 0
+                  }
                    }
                   const s = padWithZero(season)
                   const ep = padWithZero(episode)
