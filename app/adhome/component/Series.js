@@ -9,6 +9,8 @@ const Series = ({sl}) => {
   const router = useRouter()
   const [result, setresult] = useState([])
   const [load, setload] = useState(false)
+  const [a, seta]= useState(false)
+  const [id, setid] = useState()
   const Getresult =async(e)=>{
     if(e == "")
     {
@@ -50,7 +52,7 @@ const Series = ({sl}) => {
       return router.push("/")
     }
     const token = JSON.parse(tok).token
-    sl(true)
+  
     const delet = await fetch(`https://vidnaija.com.ng:8443/deletemovie/${ei}`,{
       method:'DELETE',
       headers:{
@@ -64,7 +66,6 @@ const Series = ({sl}) => {
     if(data.delete)
     {
       window.location.reload()
-      sl(false)
     }
   }
 
@@ -72,6 +73,7 @@ const Series = ({sl}) => {
 
   return (
     <main>
+
     <header className=' flex justify-center'><h1 className=' font-bold text-white lg:text-4xl hidden lg:block'>SEARCH SERIES/MOVIES</h1></header>
     <div>
         <h1 className=' font-bold text-white lg:text-xl mb-5'>FIND MOVIES: </h1>
@@ -89,6 +91,10 @@ const Series = ({sl}) => {
             <li>BOLLYWOOD</li>
     </ul>
     <div>
+    {a&&<div  className=' h-[100vh] w-[100vw] fixed z-30 justify-center flex   '><div className=' w-52 flex h-40 flex-col items-center justify-center bg-red-500 text-white font-bold '>
+                    <div className='mb-5'>ARE YOU SURE?</div>
+                    <div className=' flex justify-between w-full px-2'><div onClick={()=>Delete(id)} className=' cursor-pointer'>YES</div><div onClick={()=>seta(false)}  className=' cursor-pointer'>NO</div></div>
+                  </div></div>}
       <div className=' h-full mt-20'>{load&&<div className=' w-full h-full flex justify-center items-center'>
         <div className=' w-20 h-20 rounded-full border-t-4 border-t-[#03091A] border-yellow-600 border-x-4 border-b-4 animate-spin flex justify-center items-center'>
         <div className=' w-12 h-12 rounded-full border-b-4 border-b-[#03091A] transform -scale-y-180 border-red-600 border-x-4 border-t-4 animate-spin'></div>
@@ -96,8 +102,10 @@ const Series = ({sl}) => {
         </div>}</div>
             {
               result.map((e)=>{
+             
                 return(
-                  <div className=' flex items-center justify-between pr-5 py-3 border-opacity-30 pl-1 mb-5 border-[1px] border-gray-200 p'><div className=' font-bold text-white'>{e.title}</div><div className=' flex justify-center items-center'><MdMovieEdit className=" text-blue-500 text-2xl cursor-pointer"  onClick={()=>router.push(`/edit/${e._id}`)}/><MdDeleteForever className=' cursor-pointer ml-20 text-2xl text-red-600' onClick={()=>Delete(e._id)}/></div></div>
+                  <div className=' flex items-center justify-between pr-5 py-3 border-opacity-30 pl-1 mb-5 border-[1px] border-gray-200 p'><div className=' font-bold text-white'>{e.title}</div><div className=' flex justify-center items-center'><MdMovieEdit className=" text-blue-500 text-2xl cursor-pointer"  onClick={()=>router.push(`/edit/${e._id}`)}/><MdDeleteForever className=' cursor-pointer ml-20 text-2xl text-red-600' onClick={()=>{seta(true)
+                  setid(e._id)}}/></div>  </div>
                 )
               })
             }
