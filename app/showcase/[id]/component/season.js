@@ -9,7 +9,7 @@ const Season = ({season,seano, setseason,seasonno,  setload}) => {
     const result = Array.from({ length: seano }, (_, i) => i + 1);
     const Episode = ({array}) =>{
     
-        const data = array.map((e)=>{
+        const data = array?.map((e)=>{
             return(
                 <Link href={{pathname:"/download",query:{uri:e.link}}}  className=' mr-3 px-2 bg-red-500 font-bold mb-4 text-white py-1 rounded-sm'>Episode {e.no}</Link>
             )
@@ -47,7 +47,7 @@ useEffect(()=>{
             </div>
             <div><h1 className=' text-white font-bold mb-5 text-xl underline'>Season {seasonno}</h1></div>
             <div className=' flex w-full flex-wrap'>
-            <Episode array={season.episode}/>
+            <Episode array={season?.episode}/>
             </div>
         </div>
     </div>
