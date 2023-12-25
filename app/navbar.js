@@ -45,7 +45,7 @@ const Navbar = () => {
      
       const info = await fetch(`https://vidnaija.com.ng:8443/getUser/${logged._id}`)
       const data = await info.json()
-      if(data != null)
+      if(data)
       {
         setsrc(data.profile_image)
         setlog(false)
