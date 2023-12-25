@@ -58,7 +58,7 @@ const page = () => {
                     
                     <a href={`/showcase/${e._id}`} onClick={()=>window.open("//greewepi.net/4/6809571")} className=' flex flex-col items-center group  mb-5 px-2 ' key={e._id}>
                       <div><div style={{backgroundImage:`url(${e.image})`}} className=' rounded-full border-white border-[2px] group-hover:border-yellow-500 w-[100px]  flex justify-center items-center h-[100px] bg-cover group sm:cursor-pointer' onClick={()=>router.push()}></div></div>
-                      <div  className=' mb-5 text-white  sm:cursor-pointer group-hover:text-yellow-500 whitespace-normal ' >{tit.toUpperCase()}</div></a>
+                      <div  className=' mb-5 w-[100px] text-white  sm:cursor-pointer group-hover:text-yellow-500 text-center break-all' >{tit.toUpperCase()}</div></a>
                   )
                 })
                   
