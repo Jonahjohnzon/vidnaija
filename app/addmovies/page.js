@@ -124,7 +124,11 @@ const Movie = () => {
                                     <div className=' flex flex-col sm:flex-row  justify-between items-center mb-5 lg:mb-0'><p className=' mr-2'>IMAGE: </p><form className='w-full'><input type='text' placeholder='* * * * *' className='w-full sm:w-96 h-9 px-3 bg-transparent border-[1px] border-gray-200 border-opacity-25' value={props.values.image} onChange={props.handleChange("image")}/><ErrorMessage name='image' component='div' className='text-red-500 text-sm mt-1' /></form></div>
                                     </div>
                                     <div className=' flex justify-between mb-10 items-center  flex-wrap '>
-                                    <div className=' flex flex-col sm:flex-row  justify-between items-center mb-5 lg:mb-0 '><p className=' mr-2'>YEAR: </p><form className='w-full'><input type='number'  min={1900} max={2099} placeholder='* * * * *' className='w-full sm:w-96 h-9 px-3 bg-transparent border-[1px] border-gray-200 border-opacity-25' value={props.values.year} onChange={props.handleChange("year")}/><ErrorMessage name='year' component='div' className='text-red-500 text-sm mt-1' /></form></div>
+{/* Calculate and store the year based on the RELEASE date */}
+{
+  props.values.release &&
+  props.setFieldValue("year", new Date(props.values.release).getFullYear())
+}
                                     <div className=' flex flex-col sm:flex-row  justify-between items-center  mb-5 lg:mb-0'><p className=' mr-2'>RUNTIME: </p><form className='w-full'><input type='text' placeholder='* * * * *' className='w-full sm:w-96 h-9 px-3 bg-transparent border-[1px] border-gray-200 border-opacity-25' value={props.values.runtime} onChange={props.handleChange("runtime")}/><ErrorMessage name='runtime' component='div' className='text-red-500 text-sm mt-1' /></form></div>
                                     <div className=' flex flex-col sm:flex-row  justify-between items-center  mb-5 lg:mb-0'><p className=' mr-2'>RELEASE: </p><form className='w-full'><input type='date' placeholder='* * * * *' className='w-full sm:w-96 h-9 px-3 bg-transparent border-[1px] border-gray-200 border-opacity-25' value={props.values.release} onChange={props.handleChange("release")}/><ErrorMessage name='release' component='div' className='text-red-500 text-sm mt-1' /></form></div>
                                     </div>
