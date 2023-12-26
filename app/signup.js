@@ -41,6 +41,7 @@ const Signup = () => {
                         setresult(info.message)
                         setshow(true)
                         setload(false)
+                        resetForm()
           
                       }
                       else
@@ -75,12 +76,12 @@ const Signup = () => {
                                     </div>
                                     <div className=' mb-5'>
                                         <label htmlFor='password' className=' text-black font-bold text-base'>PASSWORD:</label>
-                                        <input id="password" type='text' className=' text-black font-semibold placeholder:text-black px-4 w-full h-12 mt-2 border-[1px] border-gray-200' placeholder='*****'  value={prop.values.password} onChange={prop.handleChange('password')}/>
+                                        <input id="password" type='password' className=' text-black font-semibold placeholder:text-black px-4 w-full h-12 mt-2 border-[1px] border-gray-200' placeholder='*****'  value={prop.values.password} onChange={prop.handleChange('password')}/>
                                         <div className=' text-red-500 text-sm'>{prop.touched.password &&prop.errors.password}</div>
                                     </div>
                                     <div className=' mb-8'>
                                         <label htmlFor='cpassword' className=' text-black font-bold text-base'>COMFIRM PASSWORD:</label>
-                                        <input id="cpassword" type='text' className=' text-black font-semibold placeholder:text-black px-4 w-full h-12 mt-2 border-[1px] border-gray-200' placeholder='*****'  value={prop.values.comfirmpassword} onChange={prop.handleChange('comfirmpassword')}/>
+                                        <input id="cpassword" type='password' className=' text-black font-semibold placeholder:text-black px-4 w-full h-12 mt-2 border-[1px] border-gray-200' placeholder='*****'  value={prop.values.comfirmpassword} onChange={prop.handleChange('comfirmpassword')}/>
                                         <div className=' text-red-500 text-sm'>{prop.touched.comfirmpassword &&prop.errors.comfirmpassword}</div>
                                     </div>
                                     <div>
