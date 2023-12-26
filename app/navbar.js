@@ -260,7 +260,7 @@ const Navbar = () => {
 
         </section>
       </div>
-      {(log && signup)&&<Sign login={login} signup={setsignup}/>}
+      {(log && signup)&&<Sign login={login}  signup={setsignup}/>}
     </header></>
   );
 };

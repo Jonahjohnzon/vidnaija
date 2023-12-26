@@ -4,7 +4,7 @@ import { Formik } from 'formik'
 import * as yup from 'yup'
 import { useRouter } from 'next/navigation'
 
-const Login = () => {
+const Login = ({signup}) => {
     const router = useRouter()
     const [show, setshow] = useState(false)
     const [result, setresult] = useState()
@@ -79,7 +79,9 @@ const Login = () => {
                                         <div className=' flex justify-end items-center mb-5'>
                                    
                                             <div>
-                                                <p className=' font-bold cursor-pointer hover:text-yellow-500 text-red-500' onClick={()=>router.push('/passforget')}>Forget password ?</p>
+                                                <p className=' font-bold cursor-pointer hover:text-yellow-500 text-red-500' onClick={()=>{
+                                                    signup(false)
+                                                    router.push('/passforget')}}>Forget password ?</p>
                                             </div>
                                         </div>
                                         <div>
