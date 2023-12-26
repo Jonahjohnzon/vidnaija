@@ -43,7 +43,7 @@ useEffect(()=>{
             <div className=' outline-none mb-9 w-fit relative  border-[#020B19] rounded-md flex items-center bg-[#243651] cursor-pointer text-white' onClick={()=>setco(!co)}>
             <h1 className=' font-bold px-7 py-2  text-lg'>Seasons</h1>
             <FaAngleDown className=' mx-2' />
-            {co &&<div className=' absolute  top-12'><Seasons /></div>}
+            {co &&<div className=' absolute  top-12 h-60 scrollbar-thumb-[#141935] scrollbar-[#03091A] scrollbar-thin overflow-scroll'><Seasons /></div>}
             </div>
             <div><h1 className=' text-white font-bold mb-5 text-xl underline'>Season {seasonno}</h1></div>
             <div className=' flex w-full flex-wrap'>
