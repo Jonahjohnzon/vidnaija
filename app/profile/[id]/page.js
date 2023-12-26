@@ -104,13 +104,13 @@ Gets()
                 {(prop)=>{
                 return(
 
-                  <section >
+                  <form >
                 
                 <>
                 <div><h1 className=' font-bold text-xl mb-8 text-white'>Change User:</h1></div>
                 <div className=' text-red-500 mb-2'>{masg}</div>
                 <div className=' text-red-500 text-sm'>{prop.touched.user_name && prop.errors.user_name}</div>
-                <div className=' flex flex-col sm:flex-row justify-between items-center mb-10'><p>USER_NAME: </p><form className=' w-full'><input type='text' placeholder='Change Username' className=' w-full sm:w-96 h-9 px-3 bg-transparent border-[1px] border-gray-200 border-opacity-25' value={prop.values.user_name} onChange={prop.handleChange("user_name")}/></form></div>
+                <div className=' flex flex-col sm:flex-row justify-between items-center mb-10'><p>USER_NAME: </p><div className=' w-full'><input type='text' placeholder='Change Username' className=' w-full sm:w-96 h-9 px-3 bg-transparent border-[1px] border-gray-200 border-opacity-25' value={prop.values.user_name} onChange={prop.handleChange("user_name")}/></div></div>
                 <div><h1 className=' font-bold text-xl mb-5 text-white'>Change Avatar:</h1></div>
                 <div className=' flex flex-wrap mb-5'>{
                   arrays.map((e,w)=>{
@@ -118,7 +118,7 @@ Gets()
                       <div className=' sm:mr-10  mb-5  relative w-16 rounded-full overflow-hidden group' onClick={()=>setSelected(e)}><Imagesprofile src={e}/>{selected == e &&<div className='absolute top-0 bg-opacity-80 w-full h-full z-40 bg-black cursor-pointer flex justify-center items-center text-yellow-500 text-xl '><FaCheck /></div>}<div className=' absolute top-0 bg-opacity-0 group-hover:bg-opacity-60 w-full h-full z-20 bg-black '></div></div>
                     </div>)
                   })}</div>
-                  <div className=' flex justify-center sm:justify-end items-center mb-20'> <div><input type='submit' className=' bg-red-600 text-white px-9 py-2 rounded-3xl font-semibold cursor-pointer'  value="SUBMIT" onClick={prop.handleSubmit} /></div></div></></section>)}
+                  <div className=' flex justify-center sm:justify-end items-center mb-20'> <div><input type='submit' className=' bg-red-600 text-white px-9 py-2 rounded-3xl font-semibold cursor-pointer'  value="SUBMIT" onClick={prop.handleSubmit} /></div></div></></form>)}
                 }
               </Formik>
                 <Formik
@@ -153,11 +153,11 @@ Gets()
                       <main className=' w-full'>
                                         <div><h1 className=' font-bold text-xl mb-5 text-white'>Change Password:</h1></div>
                                         <div className='h-5 flex justify-center mb-5'>{passdis&&<p className=' text-red-500'>{text}</p>} </div>
-                <div className=' flex flex-col sm:flex-row w-full justify-between items-center '><p>CURRENT PASSWORD: </p><form className='w-full'><input type='password' placeholder='* * * * *' className='w-full sm:w-96 h-9 px-3 bg-transparent border-[1px] border-gray-200 border-opacity-25' value={prop.values.cpassword} onChange={prop.handleChange("cpassword")}/></form></div>
+                <div className=' flex flex-col sm:flex-row w-full justify-between items-center '><p>CURRENT PASSWORD: </p><div className='w-full'><input type='password' placeholder='* * * * *' className='w-full sm:w-96 h-9 px-3 bg-transparent border-[1px] border-gray-200 border-opacity-25' value={prop.values.cpassword} onChange={prop.handleChange("cpassword")}/></div></div>
                 <div className=' text-red-500 text-sm mb-10'>{prop.touched.cpassword &&prop.errors.cpassword}</div>
-                <div className=' flex flex-col sm:flex-row justify-between items-center '><p>NEW PASSWORD: </p><form className='w-full'><input type='password' placeholder='* * * * *' className='w-full sm:w-96 h-9 px-3 bg-transparent border-[1px] border-gray-200 border-opacity-25' value={prop.values.npassword} onChange={prop.handleChange("npassword")}/></form></div>
+                <div className=' flex flex-col sm:flex-row justify-between items-center '><p>NEW PASSWORD: </p><div className='w-full'><input type='password' placeholder='* * * * *' className='w-full sm:w-96 h-9 px-3 bg-transparent border-[1px] border-gray-200 border-opacity-25' value={prop.values.npassword} onChange={prop.handleChange("npassword")}/></div></div>
                 <div className=' text-red-500 text-sm mb-10'>{prop.touched.npassword &&prop.errors.npassword}</div>
-                <div className=' flex flex-col sm:flex-row  justify-between items-center '><p>COMFIRM PASSWORD: </p><form className='w-full'><input type='password' placeholder='* * * * *' className='w-full sm:w-96 h-9 px-3 bg-transparent border-[1px] border-gray-200 border-opacity-25' value={prop.values.copassword} onChange={prop.handleChange("copassword")}/></form></div>
+                <div className=' flex flex-col sm:flex-row  justify-between items-center '><p>COMFIRM PASSWORD: </p><div className='w-full'><input type='password' placeholder='* * * * *' className='w-full sm:w-96 h-9 px-3 bg-transparent border-[1px] border-gray-200 border-opacity-25' value={prop.values.copassword} onChange={prop.handleChange("copassword")}/></div></div>
                 <div className=' text-red-500 text-sm mb-10'>{prop.touched.copassword &&prop.errors.copassword}</div>
                 <div className=' flex flex-col sm:flex-row justify-end items-center mb-20'> <div><input type='submit' className=' bg-red-600 text-white px-9 py-2 rounded-3xl font-semibold cursor-pointer'  value="SUBMIT" onClick={prop.handleSubmit} /></div></div>
                       </main>

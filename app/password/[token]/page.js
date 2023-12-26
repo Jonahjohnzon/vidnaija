@@ -53,20 +53,20 @@ const page = ({params}) => {
             }}
             >{(props)=>{
                     return(
-                        <div className='flex flex-col items-center'>
+                        <form className='flex flex-col items-center'>
                             <h1 className=' text-white font-bold text-2xl mb-5'>CHANGE PASSWORD</h1>
                             {show&&
                             <div className=' flex flex-col items-center'>
                                 <p className=' text-white font-bold mb-2'>CLICK 👇 TO GO HOME</p>
                             <h1 className=' bg-blue-500 px-4 py-2 font-bold text-white mb-3 cursor-pointer' onClick={()=>router.push("/")}>{mgs}</h1></div>}
                             {pass&&<>
-                            <div className=' flex flex-col sm:flex-row justify-between items-center '><p className='sm:whitespace-nowrap mr-5'>NEW PASSWORD: </p><form className='w-full'><input type='password' placeholder='* * * * *' className='w-full sm:w-96 h-9 px-3 bg-transparent border-[1px] border-gray-200 border-opacity-25' value={props.values.npassword} onChange={props.handleChange("npassword")}/></form></div>
+                            <div className=' flex flex-col sm:flex-row justify-between items-center '><p className='sm:whitespace-nowrap mr-5'>NEW PASSWORD: </p><div className='w-full'><input type='password' placeholder='* * * * *' className='w-full sm:w-96 h-9 px-3 bg-transparent border-[1px] border-gray-200 border-opacity-25' value={props.values.npassword} onChange={props.handleChange("npassword")}/></div></div>
                 <div className=' text-red-500 text-sm mb-10'>{props.touched.npassword &&props.errors.npassword}</div>
-                <div className=' flex flex-col sm:flex-row  justify-between items-center '><p className='sm:whitespace-nowrap mr-5'>COMFIRM PASSWORD: </p><form className='w-full'><input type='password' placeholder='* * * * *' className='w-full sm:w-96 h-9 px-3 bg-transparent border-[1px] border-gray-200 border-opacity-25' value={props.values.copassword} onChange={props.handleChange("copassword")}/></form></div>
+                <div className=' flex flex-col sm:flex-row  justify-between items-center '><p className='sm:whitespace-nowrap mr-5'>COMFIRM PASSWORD: </p><div className='w-full'><input type='password' placeholder='* * * * *' className='w-full sm:w-96 h-9 px-3 bg-transparent border-[1px] border-gray-200 border-opacity-25' value={props.values.copassword} onChange={props.handleChange("copassword")}/></div></div>
                 <div className=' text-red-500 text-sm mb-10'>{props.touched.copassword &&props.errors.copassword}</div>
                             <div className=' flex justify-center mb-10 '><input className=' px-20 py-2 hover:bg-red-700 bg-red-500 text-white font-bold cursor-pointer' type='submit' onClick={props.handleSubmit} value={"SUBMIT"}/></div>
                             </>}
-                        </div>
+                        </form>
                     )
                 }}
             </Formik>
