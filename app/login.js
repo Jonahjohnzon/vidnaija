@@ -2,8 +2,10 @@
 import React, { useState } from 'react'
 import { Formik } from 'formik'
 import * as yup from 'yup'
+import { useRouter } from 'next/navigation'
 
 const Login = () => {
+    const router = useRouter()
     const [show, setshow] = useState(false)
     const [result, setresult] = useState()
     const [load, setload] = useState(false)
@@ -40,7 +42,6 @@ const Login = () => {
                         else{
                             setresult()
                             setshow(false)
-                            console.log(info.data)
                             const datas = {
                                 token:info.token,
                                 _id:info?.data._id
@@ -78,7 +79,7 @@ const Login = () => {
                                         <div className=' flex justify-end items-center mb-5'>
                                    
                                             <div>
-                                                <p className=' font-bold cursor-pointer hover:text-yellow-500'>Forget password ?</p>
+                                                <p className=' font-bold cursor-pointer hover:text-yellow-500 text-red-500' onClick={()=>router.push('/passforget')}>Forget password ?</p>
                                             </div>
                                         </div>
                                         <div>
