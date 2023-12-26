@@ -14,7 +14,6 @@ const page = ({params}) => {
       try{
       const data = await fetch(url)
       const info = await data.json()
-      console.log(info)
       setmsg(info.mgs)
       setload(false)
       }
