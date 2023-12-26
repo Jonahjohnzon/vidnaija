@@ -6,10 +6,12 @@ import Sign from "./sign";
 import Imagesprofile from "./component/frontpage/images";
 import { IoIosNotifications } from "react-icons/io";
 import { IoMenu } from "react-icons/io5";
+import { usePathname } from 'next/navigation'
 
 const Navbar = () => {
   const [color, setcolor] = useState(true);
   const  [slide, setslide] = useState(true)
+  const pathname = usePathname()
   const [h, sh] = useState("")
   const [c, sc] = useState("")
   const [co, sco] = useState("")
@@ -72,7 +74,7 @@ const Navbar = () => {
     return () => {
       window.removeEventListener("scroll", handleNavigation);
     };
-  }, []);
+  }, [pathname]);
   const List = () => {
     return (
       <ul className=" font-semibold text-sm h-[300px] overflow-y-scroll scrollbar-thumb-[#141935] scrollbar-[#03091A] scrollbar-thin " onClick={()=> setslide(true)}>

@@ -23,7 +23,11 @@ const Get = async () =>{
         'auth-token':logged.token}
     })
     const result = await data.json()
-    setinfo(result.notify.reverse())
+    if(!result.auth)
+    {
+      router.push('/')
+    }
+    setinfo(result.mgs.notify.reverse())
     setload(false)
 }
 useEffect(()=>{

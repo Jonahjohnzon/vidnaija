@@ -34,11 +34,17 @@ const Gets = async()=>{
   const logged = await JSON.parse(logg)
   if(!logged)
   {
-      return router.push('/')
+    return router.push("/")
   }
+  const token = logged.token
         try{
-          const data = await fetch(`https://vidnaija.com.ng:8443/getUser/${log}`)
+          const data = await fetch(`https://vidnaija.com.ng:8443/getUser/${log}`,{
+            method: 'GET',
+            headers:{
+              'auth-token':token}
+          })
         const result = await data.json()
+
         if(result.auth)
       {
         setload(false)
@@ -47,7 +53,7 @@ const Gets = async()=>{
 
       }}
         catch(e){
-          console.log(e)
+          return router.push("/")
         }
     }
 useEffect(()=>{

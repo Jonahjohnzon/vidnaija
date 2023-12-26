@@ -19,7 +19,7 @@ const Signup = () => {
     <div className=' flex flex-col items-center justify-center h-[100%]  w-full'>
         <div className='mb-5 flex flex-col items-center'>
         <header className=' text-black mb-2 font-bold text-3xl'>SIGN UP</header>
-        {show && <p className=' font-semibold' style={color?{color:"red"}:{color:"green"}}>{result}</p>}
+        {show && <p className=' font-semibold text-center rounded-lg px-3 py-3' style={color?{color:"red",backgroundColor:"white"}:{color:"white", backgroundColor:"blue"}}>{result}</p>}
         </div>
 
         <div className=' w-full px-8'>
