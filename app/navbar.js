@@ -45,7 +45,7 @@ const Navbar = () => {
         return
       }
       const token = logged.token
-      const info = await fetch(`https://vidnaija.com.ng:8443/getUser/${logged._id}`,{
+      const info = await fetch(`https://vidnaija.com.ng:844/getUser/${logged._id}`,{
         method: 'GET',
         headers:{
           'auth-token':token}
