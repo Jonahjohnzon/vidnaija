@@ -46,6 +46,7 @@ const Navbar = () => {
       }
       const token = logged.token
       const info = await fetch(`https://vidnaija.com.ng:8443/getUser/${logged._id}`,{
+        mode: "no-cors",
         method: 'GET',
         headers:{
           'auth-token':token}

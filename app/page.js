@@ -23,7 +23,7 @@ export default function Home() {
   const First =async()=>{
     const url = "https://vidnaija.com.ng:8443/getcate"
     try{
-    const games = await fetch(url)
+    const games = await fetch(url,{ mode: "no-cors",})
     const Data = await games.json()
     if(Data)
     {
