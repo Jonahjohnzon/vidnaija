@@ -17,8 +17,8 @@ const Body = ({ data, seano, setseason,seasonno,  setload }) => {
           <img src={data.image} className=" w-full h-full" />
         </div>
         <div className=" w-full flex flex-col items-center lg:items-start">
-          <div className="  mb-5">
-            <h1 className=" mt-5 lg:mt-0  text-2xl lg:text-4xl font-semibold  text-white whitespace-nowrap">
+          <div className="   text-center  mb-5 ">
+            <h1 className=" mt-5 lg:mt-0  text-2xl lg:text-4xl font-semibold  text-white sm:whitespace-nowrap">
               {data.title}
               <span className=" text-2xl font-light ml-3 text-[#A5AFBE] whitespace-nowrap">
                 {data.year}
