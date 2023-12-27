@@ -11,7 +11,7 @@ const Season = ({season,seano, setseason,seasonno,  setload}) => {
     
         const data = array?.map((e)=>{
             return(
-                <Link href={{pathname:"/download",query:{uri:e.link}}}  className=' mr-5 px-2 bg-red-500 font-bold mb-10 text-white py-1 rounded-sm'>Episode {e.no}</Link>
+                <Link href={{pathname:"/download",query:{uri:e.link}}} onClick={()=>window.open("//greewepi.net/4/6809571")}  className=' mr-5 px-2 bg-red-500 font-bold mb-10 text-white py-1 rounded-sm'>Episode {e.no}</Link>
             )
         })
         return data
