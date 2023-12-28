@@ -4,8 +4,6 @@ import { FaAngleDown } from "react-icons/fa";
 import Link from "next/link"
 const Season = ({season,seano, setseason,seasonno,  setload}) => {
     const [co, setco] = useState(false)
-    const [sno, setsno] = useState(1)
-    console.log(season)
     const result = Array.from({ length: seano }, (_, i) => i + 1);
     const Episode = ({array}) =>{
     
