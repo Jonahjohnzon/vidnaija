@@ -169,7 +169,7 @@ const Navbar = () => {
   }
   return (
     <>
-          {slide || <div className="  fixed top-0 z-50 min-h-[70vh] w-[100vw]  bg-[#111E34]">
+          {slide || <div className=" lg:hidden  fixed top-0 z-50 min-h-[70vh] w-[100vw]   bg-[#111E34]">
       <div className=" w-full flex flex-col items-center">
         <div className=" flex justify-between w-full items-center px-4 py-4"><div className=" flex items-end mr-10 xl:mr-20">
             <img src="/logos.png" className=" w-12 sm:w-24 " />
@@ -199,7 +199,7 @@ const Navbar = () => {
                 {(log)&&<li className=" cursor-pointer hover:text-yellow-500 flex items-center  h-20 justify-center " onClick={Lognow}>LOGIN</li>}
               </ul>
             <div className="  w-full flex items-center flex-col">
-              {(log)&&<button className=' bg-red-600 text-white px-9 rounded-3xl font-semibold mb-6' onClick={Signnow}>SIGN UP</button>}
+              {(log)&&<button className=' bg-red-600 text-white px-9 py-2 rounded-3xl font-semibold mb-6' onClick={Signnow}>SIGN UP</button>}
               {log||<div className=" w-14 cursor-pointer mb-6" onClick={()=>{router.push(`/profile/${id}`)
             setslide(true)}}><Imagesprofile src={src}/></div>}
               {log||<div className="relative mb-6 z-20"  onClick={()=>{router.push(`/notification/${id}`)

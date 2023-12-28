@@ -17,7 +17,7 @@ const Footer = ({date}) => {
                     <header className='font-bold text-white sm:text-xl lg:mb-4'>Socal Media</header>
                     <ul>
                         <li className=' hover:text-yellow-500 sm:text-base  text-xs sm:cursor-pointer'><Link href="https://twitter.com/vidnaija" >Twitter</Link></li>
-                        <li className=' hover:text-yellow-500 sm:text-base  text-xs sm:cursor-pointer'>Telegram</li>
+                        <li className=' hover:text-yellow-500 sm:text-base  text-xs sm:cursor-pointer'><Link href="https://t.me/+LVonsnTDuK9hYTY0" >Telegram</Link></li>
                     </ul>
                 </section>
                 <section className=' mb-5 lg:mb-0'>
@@ -39,7 +39,7 @@ const Footer = ({date}) => {
             </div>
         </main>
         <section className=' absolute bottom-0 w-full left-0 h-10 flex justify-center bg-[#141935] bg-opacity-60'>
-            <div className=' flex items-center  text-xs sm:text-base w-[65%]'>
+            <div className=' flex items-center justify-center sm:justify-start  text-xs sm:text-base w-[65%]'>
                 <p className=' mr-1'>&copy;</p>
                 <p>{date} Vidnaija. Deigned by Midnight</p>
             </div>

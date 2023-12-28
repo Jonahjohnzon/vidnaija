@@ -1,12 +1,13 @@
 import React from 'react'
+import Link from 'next/link'
 
 const Note = () => {
   return (
     <div>
         <div>
           <header className=' text-yellow-500 font-bold underline mb-1'>IF MOVIE LINK IS NOT WORKING?</header>
-          <p className=' w-full text-sm mb-3 text-white'>If you cant find what you are looking for, you can email us through <span className=' text-blue-500 underline cursor-pointer'>FIND-MY-MOVIE</span>let us get it for you</p>
-          <header className=' text-yellow-500 font-bold underline mb-1'>COMMUNITY FORUM COMING SOON</header>
+          <p className=' w-full text-sm mb-3 text-white'>If you cant find what you are looking for, you can message us through our telegram  <Link href={"https://t.me/Vidnaija"} className=' text-blue-500 underline cursor-pointer'>__@VIDNAIJA__</Link>let us get it for you</p>
+          <header className=' text-yellow-500 font-bold underline mb-1'>COMMUNITY FORUM COMING SOON (VIDFORUM)</header>
           <div className=' w-full text-sm'><header className=" font-bold text-yellow-500 underline mb-3">Why join our forum?</header>
 <p className='mb-1 text-white'>🤝 Community Support: Get quick help and expert advice from fellow users who may have faced similar download challenges.</p>
 
