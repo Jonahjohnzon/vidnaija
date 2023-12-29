@@ -5,6 +5,7 @@ const Note = () => {
   return (
     <div>
         <div>
+        <header className=' text-yellow-500 font-bold underline mb-4'>NOTE:--- SOME LINKS WON'T WORK WITH AD-BLOCKERS</header>
           <header className=' text-yellow-500 font-bold underline mb-1'>IF MOVIE LINK IS NOT WORKING?</header>
           <p className=' w-full text-sm mb-3 text-white'>If you cant find what you are looking for, you can message us through our telegram  <Link href={"https://t.me/Vidnaija"} className=' text-blue-500 underline cursor-pointer'>__@VIDNAIJA__</Link>let us get it for you</p>
           <header className=' text-yellow-500 font-bold underline mb-1'>COMMUNITY FORUM COMING SOON (VIDFORUM)</header>
