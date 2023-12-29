@@ -9,7 +9,7 @@ const Season = ({season,seano, setseason,seasonno,  setload}) => {
     
         const data = array?.map((e)=>{
             return(
-                <Link href={{pathname:"/download",query:{uri:e.link}}} onClick={()=>window.open("//greewepi.net/4/6809571")}  className=' mr-5 px-4 bg-red-500 font-bold mb-10 text-white py-1 rounded-sm flex flex-col items-center'>Episode <p>{e.no}</p></Link>
+                <Link href={{pathname:"/download",query:{uri:e.link}}} onClick={()=>window.open("//greewepi.net/4/6809571")}  className=' mr-5 px-4 bg-red-500 font-bold mb-10 text-white py-[1px] sm:py-1  text-xs sm:text-base rounded-sm flex flex-col items-center'>Episode <p>{e.no}</p></Link>
             )
         })
         return data
@@ -38,11 +38,12 @@ useEffect(()=>{
     <div  className=' mt-5 flex f w-full'>
 
         <div className=' flex flex-col w-full'>
-            <div className=' outline-none mb-9 w-fit relative  border-[#020B19] rounded-md flex items-center bg-[#243651] cursor-pointer text-white' onClick={()=>setco(!co)}>
+            <div className=' outline-none mb-3 w-fit relative  border-[#020B19] rounded-md flex items-center bg-[#243651] cursor-pointer text-white' onClick={()=>setco(!co)}>
             <h1 className=' font-bold px-7 py-2  text-lg'>Seasons</h1>
             <FaAngleDown className=' mx-2' />
             {co &&<div className=' absolute  top-12 h-60 scrollbar-thumb-[#141935] scrollbar-[#03091A] scrollbar-thin overflow-scroll'><Seasons /></div>}
             </div>
+            <div className='flex items-center mb-5'><p className=' mr-2'>👆</p><p className=' text-white font-bold'>Choose Season</p></div>
             <div><h1 className=' text-white font-bold mb-5 text-xl underline'>Season {seasonno}</h1></div>
             <div className=' flex w-full flex-wrap'>
             <Episode array={season?.episode}/>
