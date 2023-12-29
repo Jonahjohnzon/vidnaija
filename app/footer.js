@@ -6,7 +6,7 @@ const Footer = ({date}) => {
   return (
     <footer  className='  w-full  bg-[#111E34] flex min-h-[300px] relative z-10'>
         <main className=' justify-center w-full flex  items-center'>
-            <div className=' 3xl:w-[65%] w-[92%] xl:w-[85%] py-14 lg:py-0 lg:items-center flex-col lg:flex-row flex justify-between'>
+            <div className=' 2xl:w-[65%] w-[92%] xl:w-[75%] py-14 lg:py-0 lg:items-center flex-col lg:flex-row flex justify-between'>
                 <section>
                     <img src='/logos.png' className=' sm:w-24 w-14 mb-5'/>
                     <ul>

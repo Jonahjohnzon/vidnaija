@@ -63,7 +63,7 @@ export default function Home() {
       <Second header={"TVSHOWS RELEASE"} Datas={fourth}/>
       </div>
       <Trailer trailer={trail} lat={lat}/>
-      <div className=" w-[90%] lg:w-[88%] overflow-hidden pt-16"><Animes header={"ASIAN-SERIES RELEASE"} Datas={anime} /></div>
+      <div className=" w-[90%] 2xl:w-[88%] overflow-hidden pt-16"><Animes header={"ASIAN-SERIES RELEASE"} Datas={anime} /></div>
      </section>:<Loading/>}
     </main>
   )

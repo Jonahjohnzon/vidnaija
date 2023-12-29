@@ -31,7 +31,7 @@ const Animes = ({header, Datas}) => {
         return info
     }
   return (
-    <main className=' pb-10 mb-20 flex justify-between items-center w-[90vw]'>
+    <main className=' pb-10 mb-20 flex justify-between items-end w-[90vw]'>
         <div className=' w-[100%] 2xl:w-[65%]'>
             <header className=' font-bold text-2xl text-white mb-5 flex items-center justify-between'><div>{header}</div><div className='flex items-center text-sm text-[#A5AFBE]'><BiSolidGrid  className=' text-yellow-500'/></div></header>
             <ul className=' font-bold text-sm flex items-center mb-8'>
@@ -42,7 +42,7 @@ const Animes = ({header, Datas}) => {
                 <Data/>
             </div>
         </div>
-        <div className=' w-[35%] 2xl:flex flex-col items-center justify-between hidden'>
+        <div className=' w-[35%] lg:flex flex-col items-center justify-end hidden'>
             <Ads/>
         </div>
      

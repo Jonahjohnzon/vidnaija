@@ -30,7 +30,10 @@ const Display = ({params}) => {
         const data_ = await data.json()
         if(!data_)
         {
-          return router.push('/')
+          setlen(0)
+          setArray([])
+          setData([])
+          return setload(false)
         }
         setData(data_.info)
         const no = data_.length/div
