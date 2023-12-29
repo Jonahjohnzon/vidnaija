@@ -82,7 +82,7 @@ const   Reply=()=>{
             <div className=' h-full'>
                 <section className=' flex w-full flex-col bg-[#0f2236] border-[1px] border-gray-800 p-2 h-full'>
                     <div className=' flex justify-between h-full w-full items-start mr-5'>
-                    <div className=' w-10 flex items-center'><Imagesprofile src={info.profile_image} /> <h4 className=' ml-5 text-yellow-500 text-xs font-bold mb-1 whitespace-nowrap'>{info?.name?.toUpperCase()}</h4></div>
+                    <div className=' w-10 flex items-center'><Imagesprofile src={info.profile_image} /> <h4 className=' ml-5 text-yellow-500 text-xs font-bold mb-1 whitespace-nowrap'>{info?.name}</h4></div>
                     {info?.id_user == id &&<div className=' relative group sm:cursor-pointer' ><div className=' absolute z-20 px-3 py-1 rounded-md bg-white text-black top-3 sm:cursor-pointer left-0 hidden hover:block group-hover:block' onClick={DELETE}>DELETE</div><BsThreeDotsVertical /></div>}
                     </div>
                     <div className=' h-[1px] w-full bg-gray-200 bg-opacity-20'></div>
@@ -126,7 +126,7 @@ const   Reply=()=>{
                 <div className=' h-full'>
                     <section className=' flex w-full flex-col bg-[#0f2236] border-[1px] border-gray-800 p-2 h-full'>
                         <div className=' flex justify-between h-full w-full items-start mr-5'>
-                        <div className=' w-10 flex items-center'><Imagesprofile src={e.profile_image} /> <h4 className=' ml-5 text-yellow-500 text-xs font-bold mb-1 whitespace-nowrap'>{e?.name?.toUpperCase()}</h4></div>
+                        <div className=' w-10 flex items-center'><Imagesprofile src={e.profile_image} /> <h4 className=' ml-5 text-yellow-500 text-xs font-bold mb-1 whitespace-nowrap'>{e?.name}</h4></div>
                         {info?.id_user == id &&<div className=' relative group sm:cursor-pointer' ><div className=' absolute z-20 px-3 py-1 rounded-md bg-white text-black top-3 sm:cursor-pointer left-0 hidden hover:block group-hover:block' onClick={()=>DELETECOMMENT(e._id)}>DELETE</div><BsThreeDotsVertical /></div>}
                         </div>
                         <div className=' h-[1px] w-full bg-gray-200 bg-opacity-20'></div>
