@@ -76,6 +76,7 @@ const Movie = () => {
                     }
                     if(selectedGenres.length < 3)
                     {
+                      setload(false)
                         return
                     }
                     const total = {...form,...lows,...highs,...cate,...seri}

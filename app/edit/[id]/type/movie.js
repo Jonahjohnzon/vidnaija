@@ -60,6 +60,7 @@ const Movie = ({obj,id, setload, Gets}) => {
                     }
                     if(selectedGenres.length < 3)
                     {
+                      setload(false)
                         return
                     }
                     const tok = localStorage.getItem('data')

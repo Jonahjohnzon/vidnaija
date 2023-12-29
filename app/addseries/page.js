@@ -61,6 +61,7 @@ return (
                   }
                   if(selectedGenres.length < 3)
                   {
+                    setloading(false)
                       return
                   }
                  

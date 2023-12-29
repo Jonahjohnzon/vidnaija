@@ -54,6 +54,7 @@ return (
                   }
                   if(selectedGenres.length < 3)
                   {
+                    setload(false)
                       return
                   }
                  

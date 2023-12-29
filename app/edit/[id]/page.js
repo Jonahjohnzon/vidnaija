@@ -26,7 +26,6 @@ const page = ({params}) => {
                 'auth-token':token.token}
         })
         const info = await data.json()
-        console.log(info)
         if(info?.auth == false)
         {
             return router.push('/')
@@ -34,7 +33,7 @@ const page = ({params}) => {
         setseries(info.series)
         setobj(info)
         setload(false)
-        console.log(info.category)
+       
     }
 
     useEffect(()=>{
