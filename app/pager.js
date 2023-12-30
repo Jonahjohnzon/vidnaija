@@ -20,7 +20,7 @@ const Pager = ({number,Move,array,page,type,Right,Left, div}) => {
               if(e != number)
               {
               Move(e)}}}>{e}</p>:
-            <p className=''></p>}
+            <p className=''>...</p>}
             </div>
           )
         }) 
