@@ -12,20 +12,41 @@ const Pager = ({number,Move,array,page,type,Right,Left, div}) => {
       <div className='bg-[#A5AFBE] bg-opacity-40 w-[1px] h-full mr-3'></div>
       <div className=' flex items-center'>
       {number > 1 && <FaCaretLeft className=' mr-3 text-blue-500 cursor-pointer'  onClick={Left}/>}
-      <div className=' flex items-center'>
-        {array.map((e,i,a)=>{
-          return(<div key={i}>
-          {(e < 4 || i == a.length - 1)?
-            <p className=' mr-3 cursor-pointer' style={e == number?{color:"blue"}:{color:""}}  onClick={()=>{
-              if(e != number)
-              {
-              Move(e)}}}>{e}</p>:
-            <p className=''>...</p>}
-            </div>
-          )
-        }) 
-        }
-      </div>
+      <div className='flex items-center'>
+  {array.map((e, i, a) => (
+    <div key={i}>
+      {i < 3 ? (
+        <p
+          className='mr-3 cursor-pointer'
+          style={e === number ? { color: "blue" } : { color: "" }}
+          onClick={() => {
+            if (e !== number) {
+              Move(e);
+            }
+          }}
+        >
+          {e}
+        </p>
+      ) : i === a.length - 1 ? (
+        <p
+          className='mr-3 cursor-pointer'
+          style={e === number ? { color: "blue" } : { color: "" }}
+          onClick={() => {
+            if (e !== number) {
+              Move(e);
+            }
+          }}
+        >
+          {e}
+        </p>
+      ) : (
+        <p className='mr-3 cursor-pointer'>...</p>
+      )}
+    </div>
+  ))}
+</div>
+
+
       {number < page&&<FaCaretRight  className=' text-blue-500 cursor-pointer' onClick={Right}/>}
       </div>
     </section>
