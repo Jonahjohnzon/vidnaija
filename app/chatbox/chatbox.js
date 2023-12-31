@@ -1,4 +1,4 @@
-import React, { use, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { FaReply } from "react-icons/fa";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import Imagesprofile from '../component/frontpage/images';
@@ -38,6 +38,25 @@ catch(e){
 }
 
 }
+  const handleClickOutside = (event) => {
+    // Check if the click is outside the element
+    if (containerRef.current && !containerRef.current.contains(event.target) && event.target.tagName !== 'DIV') {
+      setsrd(false);
+      setshd(false);
+    }
+  };
+
+  useEffect(() => {
+    // Add event listener when component mounts
+    document.addEventListener('mousedown', handleClickOutside);
+
+    // Remove event listener when component unmounts
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []); // Empty dependency array means this effect runs once when component mounts
+
+  const containerRef = useRef(null);
 
 const DELETECOMMENT =async(ei)=>{
   setload(true)
@@ -81,16 +100,16 @@ const   Reply=()=>{
 }
 
   return (
-    <div className=' mb-3 w-full flex flex-col items-end '  >
+    <div className=' mb-3 w-full flex flex-col items-end '  ref={containerRef}>
 <div className='   relative  shadow-md w-[100%] p-1 bg-[#09152A]'>
             <div className=' h-full'>
-                <section className=' flex w-full flex-col bg-[#0f2236] border-[1px] border-gray-800 p-2 h-full'>
+                <section className=' flex w-full flex-col bg-[#0f2236] border-[1px] border-gray-800 p-2 h-full' >
                     <div className=' flex justify-between h-full w-full items-start mr-5'>
-                    <div className=' w-10 flex items-center'><Imagesprofile src={info.profile_image} /> <h4 className=' ml-5 text-yellow-500 text-xs font-bold mb-1 whitespace-nowrap'>{info?.name}</h4></div>
+                    <div className=' w-10 flex items-center' onClick={()=>{setshd(false)}}><Imagesprofile src={info.profile_image} /> <h4 className=' ml-5 text-yellow-500 text-xs font-bold mb-1 whitespace-nowrap'>{info?.name}</h4></div>
                     {info?.id_user == id &&<div className=' relative group sm:cursor-pointer' >{shd &&<div className=' absolute z-20 px-3 py-1 rounded-md bg-white text-black top-3 sm:cursor-pointer left-0' onClick={DELETE}>DELETE</div>}<BsThreeDotsVertical  onClick={()=>{setshd(!shd)}}/></div>}
                     </div>
                     <div className=' h-[1px] w-full bg-gray-200 bg-opacity-20'></div>
-                    <div className=' flex justify-between w-full'>
+                    <div className=' flex justify-between w-full' onClick={()=>{setshd(false)}}>
                       <div className='  pt-2 w-14 flex flex-col justify-evenly  border-r-[1px] border-r-gray-200 border-opacity-20 pr-2'>
                         <div className='flex justify-between'>
                         <div className=' flex justify-center'><Stars no={info.rank}/></div>
@@ -106,7 +125,7 @@ const   Reply=()=>{
                 </div>
                 </div>
                 </div>
-                <div> 
+                <div onClick={()=>{setshd(false)}}> 
                  <div className=' h-[1px] w-full bg-gray-200 bg-opacity-20'></div>
                  <div className=' flex  justify-between items-center mt-2'>
                <section className=' text-sm  items-center flex'>
@@ -130,11 +149,11 @@ const   Reply=()=>{
                 <div className=' h-full'>
                     <section className=' flex w-full flex-col bg-[#0f2236] border-[1px] border-gray-800 p-2 h-full'>
                         <div className=' flex justify-between h-full w-full items-start mr-5'>
-                        <div className=' w-10 flex items-center'><Imagesprofile src={e.profile_image} /> <h4 className=' ml-5 text-yellow-500 text-xs font-bold mb-1 whitespace-nowrap'>{e?.name}</h4></div>
-                        {info?.id_user == id &&<div className=' relative group sm:cursor-pointer' >{srd &&<div className=' absolute z-20 px-3 py-1 rounded-md bg-white text-black top-3 sm:cursor-pointer left-0' onClick={()=>DELETECOMMENT(e._id)}>DELETE</div>}<BsThreeDotsVertical onClick={()=>{setsrd(!srd)}}/></div>}
+                        <div className=' w-10 flex items-center' onClick={()=>{setsrd(false)}}><Imagesprofile src={e.profile_image} /> <h4 className=' ml-5 text-yellow-500 text-xs font-bold mb-1 whitespace-nowrap'>{e?.name}</h4></div>
+                        {info?.id_user == id &&<div className=' relative group sm:cursor-pointer' >{srd &&<div className=' absolute z-20 px-3 py-1 rounded-md bg-white text-black top-3 sm:cursor-pointer left-0' onClick={()=>DELETECOMMENT(e._id)}>DELETE</div>}<BsThreeDotsVertical  onClick={()=>{setsrd(!srd)}}/></div>}
                         </div>
                         <div className=' h-[1px] w-full bg-gray-200 bg-opacity-20'></div>
-                        <div className=' flex justify-between w-full'>
+                        <div className=' flex justify-between w-full' onClick={()=>{setsrd(false)}}>
                           <div className='  pt-3 w-14 flex flex-col justify-evenly border-r-[1px] border-r-gray-200  border-opacity-20 pr-2'>
                             <div className='flex justify-between'>
                             <div className=' flex justify-center'><Stars no={e.rank}/></div>
@@ -143,14 +162,14 @@ const   Reply=()=>{
                
                           </div>
                           <div className=' w-[1px] h-full bg-opacity-20 bg-gray-200 mr-5'></div>
-                        <div className=' w-full flex justify-start'>
+                        <div className=' w-full flex justify-start' >
                     <div className=' pt-2 pr-5 w-full'>
                     <div className=' text-white text-sm lg:text-base  min-h-[40px] break-all flex justify-start'><div className=' '/>{e.chat}</div>
                    
                     </div>
                     </div>
                     </div>
-                    <div> 
+                    <div onClick={()=>{setsrd(false)}}>  
                      <div className=' h-[1px] w-full bg-gray-200 bg-opacity-20'></div>
                      <div className=' flex  justify-between items-center mt-2'>
                 
