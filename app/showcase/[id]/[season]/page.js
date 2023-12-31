@@ -33,7 +33,6 @@ const Showcase = ({params}) => {
         {
           return router.push('/')
         }
-        console.log(info)
         setdata(info)
         setload(false)
         setseano(info.number)
