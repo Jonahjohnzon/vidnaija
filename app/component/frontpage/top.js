@@ -40,7 +40,7 @@ const Info =()=>{
                         <div className=' text-4xl'><LuDot /></div>
                         <div className=' font-medium '>Release: {e.release}</div>
                     </div>
-                   <Button name="DOWNLOAD" url={`/showcase/${e._id}`}/>
+                   <Button name="DOWNLOAD" url={`/showcase/${e._id}/1`}/>
                     </div>
                 </section>
                 <section className=' lg:flex items-center hidden'>

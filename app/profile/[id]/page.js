@@ -1,7 +1,7 @@
 "use client"
 import Imagesprofile from '@/app/component/frontpage/images'
 import Loading from '@/app/loading'
-import Top from '@/app/showcase/[id]/component/top'
+import Top from '@/app/showcase/[id]/[season]/component/top'
 import Stars from '@/app/stars'
 import React, { useEffect, useState } from 'react'
 import Type from './type'

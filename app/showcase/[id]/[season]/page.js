@@ -10,10 +10,10 @@ import Commentss from '@/app/comment'
 import Pager from '@/app/pager'
 
 const Showcase = ({params}) => {
+  const sea = params?.season
   const router = useRouter()
   const [load, setload] = useState(true)
   const [disable, setDisable] = useState(false)
-  const [seasonno, setseason] = useState(1)
   const [comment_display, setDispay] = useState(false)
   const [start, setstart] = useState(0)
   const [limit, setlimit] = useState(15)
@@ -27,7 +27,7 @@ const Showcase = ({params}) => {
     const id = params?.id
     const Result = async()=>{
       try{
-        const data = await fetch(`https://vidnaija.com.ng:8443/getMovies/${id}?start=${start}&limit=${limit}&season=${seasonno}`)
+        const data = await fetch(`https://vidnaija.com.ng:8443/getMovies/${id}?start=${start}&limit=${limit}&season=${sea}`)
         const info = await data.json()
         if(!info)
         {
@@ -76,7 +76,7 @@ const Showcase = ({params}) => {
     }
    useEffect(()=>{
   Result()
-   },[limit, seasonno])
+   },[limit])
    const Check =(e)=>{
     const no = e
     const ans = e % div
@@ -111,7 +111,7 @@ const Showcase = ({params}) => {
       <Top data={data}/>
     <div className='2xl:w-[56%] w-[80%] '>
       <div className=' mb-10 w-full'>
-        <Body data={data} seano={seano} setseason={setseason} seasonno={seasonno}  setload={ setload}/>
+        <Body data={data} seano={seano}  id={id} seasonno={sea}  setload={ setload}/>
         
         </div>
         <section className='mb-10'>

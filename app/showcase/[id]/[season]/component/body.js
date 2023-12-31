@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import Season from "./season";
 import Link from "next/link"
 
-const Body = ({ data, seano, setseason,seasonno,  setload }) => {
+const Body = ({ data, seano, setseason,seasonno,  setload ,id}) => {
   const router = useRouter();
   const series = data.series;
   return (
@@ -82,7 +82,7 @@ const Body = ({ data, seano, setseason,seasonno,  setload }) => {
       </div>
      
     </div>
-    {series && <Season season={data.seasons} seano={seano} setseason={setseason} seasonno={seasonno}  setload={ setload}/>}
+    {series && <Season season={data.seasons} seano={seano} setseason={setseason} seasonno={seasonno} id={id}  setload={ setload}/>}
     </div>
   );
 };

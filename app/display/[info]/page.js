@@ -4,7 +4,7 @@ import Top from './component/top'
 import Body from './component/body'
 import { BiSolidGrid } from "react-icons/bi";
 import Loading from '../../loading'
-import Note from '@/app/showcase/[id]/note';
+import Note from '@/app/showcase/[id]/[season]/note';
 import Pager from '@/app/pager';
 import { useRouter } from 'next/navigation';
 

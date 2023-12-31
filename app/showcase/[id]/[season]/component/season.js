@@ -2,7 +2,10 @@
 import React, { useState, useEffect } from 'react'
 import { FaAngleDown } from "react-icons/fa";
 import Link from "next/link"
-const Season = ({season,seano, setseason,seasonno,  setload}) => {
+import { useRouter } from 'next/navigation';
+
+const Season = ({season,seano,seasonno,  setload, id}) => {
+    const router = useRouter()
     const [co, setco] = useState(false)
     const result = Array.from({ length: seano }, (_, i) => i + 1);
     const Episode = ({array}) =>{
@@ -16,13 +19,14 @@ const Season = ({season,seano, setseason,seasonno,  setload}) => {
     }
     
     const Seasons = () =>{
-        const data = result.map((e)=>{
+        const data = result.map((e,i)=>{
             return(
-                <div  key={e._id}   className=' py-2 w-full   px-10 border-[#020B19] bg-[#243651] border-2 ' onClick={()=>{
-                    if(e !== seasonno)
+                <div  key={i}   className=' py-2 w-full   px-10 border-[#020B19] bg-[#243651] border-2 ' onClick={()=>{
+                    if(e != seasonno)
                     {
                     setload(true)
-                    setseason(e)}
+                    router.push(`/showcase/${id}/${e}`)
+                    }
                 }}>
                          Season {e}   
                 </div>
