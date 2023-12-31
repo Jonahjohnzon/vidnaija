@@ -1,5 +1,5 @@
 "use client"// Layout component (layouts/YourLayout.js)
-import { useEffect } from 'react';
+
 
 const MyLayout = ({ children }) => {
 
