@@ -10,9 +10,9 @@ const Season = ({season,seano,seasonno,  setload, id}) => {
     const result = Array.from({ length: seano }, (_, i) => i + 1);
     const Episode = ({array}) =>{
     
-        const data = array?.map((e)=>{
+        const data = array?.map((e, i)=>{
             return(
-                <Link href={{pathname:"/download",query:{uri:e.link}}} onClick={()=>window.open("//greewepi.net/4/6809571")}  className=' mr-5 px-4 bg-red-500 font-bold mb-10 text-white py-[1px] sm:py-1  text-xs sm:text-base rounded-sm flex flex-col items-center'>Episode <p>{e.no}</p></Link>
+                <Link href={{pathname:"/download",query:{uri:e.link}}} onClick={()=>window.open("//greewepi.net/4/6809571")} key={i}  className=' mr-5 px-4 bg-red-500 font-bold mb-10 text-white py-[1px] sm:py-1  text-xs sm:text-base rounded-sm flex flex-col items-center'>Episode <p>{e.no}</p></Link>
             )
         })
         return data

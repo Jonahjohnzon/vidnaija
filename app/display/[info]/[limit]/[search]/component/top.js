@@ -1,12 +1,14 @@
 "use client"
-import React, { use, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaChevronRight } from "react-icons/fa";
 import Link from "next/link"
 import { IoSearch } from "react-icons/io5";
 import { Formik } from 'formik';
 import * as yup from 'yup'
+import { useRouter } from 'next/navigation';
 
-const Top = ({info, Searchbar, settype}) => {
+const Top = ({info,infosmall, settype}) => {
+  const router = useRouter()
   const schema = yup.object({
     search:yup.string().required()
   })
@@ -24,8 +26,7 @@ const Top = ({info, Searchbar, settype}) => {
     initialValues={{search:""}}
     validationSchema={schema}
     onSubmit={async(form)=>{
-     
-      Searchbar(form)
+      router.push(`/display/${infosmall}/1/${form.search}`)
     }}>
       {(props)=>{
         return(

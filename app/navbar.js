@@ -78,22 +78,22 @@ const Navbar = () => {
   const List = () => {
     return (
       <ul className=" font-semibold text-sm h-[300px] overflow-y-scroll scrollbar-thumb-[#141935] scrollbar-[#03091A] scrollbar-thin " onClick={()=> setslide(true)}>
-       <li onClick={()=>router.push('/display/movies/1')} > <div className=" mb-2 hover:bg-[#1F375F] hover:bg-opacity-10 px-10 " ><p className=" w-32">ALL</p></div></li>
-       <li onClick={()=>router.push('/display/action/1')}><div className=" mb-2 hover:bg-[#1F375F] hover:bg-opacity-10 px-10 "><p className=" w-32">ACTION</p></div></li>
-       <li onClick={()=>router.push('/display/adventure/1')}><div className=" mb-2 hover:bg-[#1F375F] hover:bg-opacity-10 px-10 "><p className=" w-32">ADVENTURE</p></div></li>
-       <li onClick={()=>router.push('/display/animation/1')}><div className=" mb-2 hover:bg-[#1F375F] hover:bg-opacity-10 px-10 "><p className=" w-32">ANIMATION</p></div></li>
-       <li onClick={()=>router.push('/display/comedy/1')}><div className=" mb-2 hover:bg-[#1F375F] hover:bg-opacity-10 px-10 "><p className=" w-32">COMEDY</p></div></li>
-       <li onClick={()=>router.push('/display/crime/1')}><div className=" mb-2 hover:bg-[#1F375F] hover:bg-opacity-10 px-10 "><p className=" w-32">CRIME</p></div></li>
-       <li onClick={()=>router.push('/display/drama/1')}><div className=" mb-2 hover:bg-[#1F375F] hover:bg-opacity-10 px-10 "><p className=" w-32">DRAMA</p></div></li>
-       <li onClick={()=>router.push('/display/family/1')}><div className=" mb-2 hover:bg-[#1F375F] hover:bg-opacity-10 px-10 "><p className=" w-32">FAMILY</p></div></li>
-       <li onClick={()=>router.push('/display/history/1')}> <div className=" mb-2 hover:bg-[#1F375F] hover:bg-opacity-10 px-10 "><p className=" w-32">HISTORY</p></div></li>
-       <li onClick={()=>router.push('/display/horror/1')}> <div className=" mb-2 hover:bg-[#1F375F] hover:bg-opacity-10 px-10 "><p className=" w-32">HORROR</p></div></li>
-       <li onClick={()=>router.push('/display/musical/1')}> <div className=" mb-2 hover:bg-[#1F375F] hover:bg-opacity-10 px-10 "><p className=" w-32">MUSICAL</p></div></li>
-       <li onClick={()=>router.push('/display/romance/1')}> <div className=" mb-2 hover:bg-[#1F375F] hover:bg-opacity-10 px-10 "><p className=" w-32">ROMANCE</p></div></li>
-       <li onClick={()=>router.push('/display/scifi/1')}> <div className=" mb-2 hover:bg-[#1F375F] hover:bg-opacity-10 px-10 "><p className=" w-32">SCI-FI</p></div></li>
-       <li onClick={()=>router.push('/display/sport/1')}> <div className=" mb-2 hover:bg-[#1F375F] hover:bg-opacity-10 px-10 "><p className=" w-32">SPORT</p></div></li>
-       <li onClick={()=>router.push('/display/thriler/1')}> <div className=" mb-2 hover:bg-[#1F375F] hover:bg-opacity-10 px-10 "><p className=" w-32">THRILER</p></div></li>
-       <li onClick={()=>router.push('/display/fantasy/1')}> <div className=" mb-2 hover:bg-[#1F375F] hover:bg-opacity-10 px-10 "><p className=" w-32">FANTASY</p></div></li>
+       <li onClick={()=>router.push('/display/movies/1/1')} > <div className=" mb-2 hover:bg-[#1F375F] hover:bg-opacity-10 px-10 " ><p className=" w-32">ALL</p></div></li>
+       <li onClick={()=>router.push('/display/action/1/1')}><div className=" mb-2 hover:bg-[#1F375F] hover:bg-opacity-10 px-10 "><p className=" w-32">ACTION</p></div></li>
+       <li onClick={()=>router.push('/display/adventure/1/1')}><div className=" mb-2 hover:bg-[#1F375F] hover:bg-opacity-10 px-10 "><p className=" w-32">ADVENTURE</p></div></li>
+       <li onClick={()=>router.push('/display/animation/1/1')}><div className=" mb-2 hover:bg-[#1F375F] hover:bg-opacity-10 px-10 "><p className=" w-32">ANIMATION</p></div></li>
+       <li onClick={()=>router.push('/display/comedy/1/1')}><div className=" mb-2 hover:bg-[#1F375F] hover:bg-opacity-10 px-10 "><p className=" w-32">COMEDY</p></div></li>
+       <li onClick={()=>router.push('/display/crime/1/1')}><div className=" mb-2 hover:bg-[#1F375F] hover:bg-opacity-10 px-10 "><p className=" w-32">CRIME</p></div></li>
+       <li onClick={()=>router.push('/display/drama/1/1')}><div className=" mb-2 hover:bg-[#1F375F] hover:bg-opacity-10 px-10 "><p className=" w-32">DRAMA</p></div></li>
+       <li onClick={()=>router.push('/display/family/1/1')}><div className=" mb-2 hover:bg-[#1F375F] hover:bg-opacity-10 px-10 "><p className=" w-32">FAMILY</p></div></li>
+       <li onClick={()=>router.push('/display/history/1/1')}> <div className=" mb-2 hover:bg-[#1F375F] hover:bg-opacity-10 px-10 "><p className=" w-32">HISTORY</p></div></li>
+       <li onClick={()=>router.push('/display/horror/1/1')}> <div className=" mb-2 hover:bg-[#1F375F] hover:bg-opacity-10 px-10 "><p className=" w-32">HORROR</p></div></li>
+       <li onClick={()=>router.push('/display/musical/1/1')}> <div className=" mb-2 hover:bg-[#1F375F] hover:bg-opacity-10 px-10 "><p className=" w-32">MUSICAL</p></div></li>
+       <li onClick={()=>router.push('/display/romance/1/1')}> <div className=" mb-2 hover:bg-[#1F375F] hover:bg-opacity-10 px-10 "><p className=" w-32">ROMANCE</p></div></li>
+       <li onClick={()=>router.push('/display/scifi/1/1')}> <div className=" mb-2 hover:bg-[#1F375F] hover:bg-opacity-10 px-10 "><p className=" w-32">SCI-FI</p></div></li>
+       <li onClick={()=>router.push('/display/sport/1/1')}> <div className=" mb-2 hover:bg-[#1F375F] hover:bg-opacity-10 px-10 "><p className=" w-32">SPORT</p></div></li>
+       <li onClick={()=>router.push('/display/thriler/1/1')}> <div className=" mb-2 hover:bg-[#1F375F] hover:bg-opacity-10 px-10 "><p className=" w-32">THRILER</p></div></li>
+       <li onClick={()=>router.push('/display/fantasy/1/1')}> <div className=" mb-2 hover:bg-[#1F375F] hover:bg-opacity-10 px-10 "><p className=" w-32">FANTASY</p></div></li>
       </ul>
     );
   };
@@ -115,7 +115,7 @@ const Navbar = () => {
     {
     sk("#EABC00")
     setslide(true)
-    router.push('/display/asianseries/1')
+    router.push('/display/asianseries/1/1')
     
   }
     else{
@@ -125,7 +125,7 @@ const Navbar = () => {
     {
     sa("#EABC00")
     setslide(true)
-    router.push('/display/anime/1')
+    router.push('/display/anime/1/1')
     
   }
     else{
@@ -135,7 +135,7 @@ const Navbar = () => {
     {
     sad("#EABC00")
     setslide(true)
-    router.push('/display/tvshows/1')
+    router.push('/display/tvshows/1/1')
   
   }
     else{

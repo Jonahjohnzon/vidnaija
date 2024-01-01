@@ -15,6 +15,7 @@ const Display = ({params}) => {
     const infosmall = params.info
     const info = infosmall.toUpperCase()
     const limi = parseInt(params.limit) 
+    const search = params.search
     const lim = limi * 20
     const sta = lim - 20 
     const [Data, setData] = useState()
@@ -22,7 +23,7 @@ const Display = ({params}) => {
     const [page , setpage] = useState(1)
     const [array, setArray] = useState()
     const [type, settype] = useState('hollywood')
-    const [searching, setsearch] = useState(false)
+
    
     const number = lim/20
     const div = 20
@@ -52,9 +53,8 @@ const Display = ({params}) => {
         console.log(e)
       }
     }
-    const Searchbar = async(form) =>{
-      setsearch(true)
-      const inform = form?.search
+    const Searchbar = async() =>{
+      const inform = search
       setload(true)
       const data = await fetch(`https://vidnaija.com.ng:8443/Search/${inform}?cate=${info}&type=${type}&start=${sta}&limit=${lim}`,{
         method: 'GET',
@@ -75,12 +75,12 @@ const Display = ({params}) => {
     }
 
     useEffect(()=>{
-      if(searching)
+      if(search == 1)
       {
-        Searchbar()
+      Get()
       }
       else{
-      Get()
+        Searchbar()
       }
     },[])
 
@@ -88,7 +88,7 @@ const Display = ({params}) => {
       if (number < page)
       {
         setload(true)
-        router.push(`/display/${infosmall}/${limi + 1}`)
+        router.push(`/display/${infosmall}/${limi + 1}/${search}`)
         
       }
     }
@@ -96,13 +96,13 @@ const Display = ({params}) => {
       if (number > 1)
       {
         setload(true)
-        router.push(`/display/${infosmall}/${limi - 1}`)
+        router.push(`/display/${infosmall}/${limi - 1}/${search}`)
         
       }
     }
     const Move =(e)=>{
     setload(true)
-    router.push(`/display/${infosmall}/${e}`)
+    router.push(`/display/${infosmall}/${e}/${search}`)
    
     }
 
@@ -110,7 +110,7 @@ const Display = ({params}) => {
   return (
     <>
     {loads?<Loading/>:<div>
-        <Top info={info}  Searchbar={Searchbar} settype={settype}/>
+        <Top info={info} infosmall={infosmall}  settype={settype}/>
         <div className='min-h-[180vh] flex flex-col items-center  relative mb-20'>
 
           <div className=' w-[80%] 2xl:w-[60%] overflow-hidden pt-20 relative z-30 mb-20'>
