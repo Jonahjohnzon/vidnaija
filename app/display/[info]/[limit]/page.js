@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import Top from './component/top'
 import Body from './component/body'
 import { BiSolidGrid } from "react-icons/bi";
-import Loading from '../../loading'
+import Loading from '@/app/loading';
 import Note from '@/app/showcase/[id]/[season]/note';
 import Pager from '@/app/pager';
 import { useRouter } from 'next/navigation';
@@ -12,20 +12,21 @@ import { useRouter } from 'next/navigation';
 const Display = ({params}) => {
   const router = useRouter()
   const [loads, setload] = useState(true)
-    const info = params.info.toUpperCase()
+    const infosmall = params.info
+    const info = infosmall.toUpperCase()
+    const lim = parseInt(params.limit)
+    const sta = lim - 20 
     const [Data, setData] = useState()
     const [len, setlen] = useState()
-    const [start, setstart] = useState(0)
-    const [limit, setlimit] = useState(20)
     const [page , setpage] = useState(1)
     const [array, setArray] = useState()
     const [type, settype] = useState('hollywood')
     const [searching, setsearch] = useState(false)
    
-    const [number, setnumber] = useState(1)
+    const number = lim/20
     const div = 20
     const Get =async()=>{
-      const data = await fetch(`https://vidnaija.com.ng:8443/listMovies/${info}?start=${start}&limit=${limit}`)
+      const data = await fetch(`https://vidnaija.com.ng:8443/listMovies/${info}?start=${sta}&limit=${lim}`)
       try{
         const data_ = await data.json()
         if(!data_)
@@ -54,7 +55,7 @@ const Display = ({params}) => {
       setsearch(true)
       const inform = form?.search
       setload(true)
-      const data = await fetch(`https://vidnaija.com.ng:8443/Search/${inform}?cate=${info}&type=${type}&start=${start}&limit=${limit}`,{
+      const data = await fetch(`https://vidnaija.com.ng:8443/Search/${inform}?cate=${info}&type=${type}&start=${sta}&limit=${lim}`,{
         method: 'GET',
       })
       
@@ -80,31 +81,28 @@ const Display = ({params}) => {
       else{
       Get()
       }
-    },[limit])
+    },[])
 
     const Right = () =>{
       if (number < page)
       {
         setload(true)
-        setstart((e)=>e + div)
-        setlimit((e)=>e + div)
-        setnumber((e)=>e + 1)
+        router.push(`/display/${infosmall}/${lim + div}`)
+        
       }
     }
     const Left = () =>{
       if (number > 1)
       {
         setload(true)
-        setstart((e)=>e - div)
-        setlimit((e)=>e - div)
-        setnumber((e)=>e - 1)
+        router.push(`/display/${infosmall}/${lim - div}`)
+        
       }
     }
     const Move =(e)=>{
     setload(true)
-    setstart((e * div) - div)
-    setlimit(e * div)
-    setnumber(e)
+    router.push(`/display/${infosmall}/${20 * e}`)
+   
     }
 
 

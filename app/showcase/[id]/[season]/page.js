@@ -1,5 +1,5 @@
 "use client"
-import React, { use, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Top from './component/top'
 import Body from './component/body'
 import Note from './note'
