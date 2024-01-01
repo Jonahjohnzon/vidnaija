@@ -14,7 +14,8 @@ const Display = ({params}) => {
   const [loads, setload] = useState(true)
     const infosmall = params.info
     const info = infosmall.toUpperCase()
-    const lim = parseInt(params.limit)
+    const limi = parseInt(params.limit) 
+    const lim = limi * 20
     const sta = lim - 20 
     const [Data, setData] = useState()
     const [len, setlen] = useState()
@@ -87,7 +88,7 @@ const Display = ({params}) => {
       if (number < page)
       {
         setload(true)
-        router.push(`/display/${infosmall}/${lim + div}`)
+        router.push(`/display/${infosmall}/${limi + 1}`)
         
       }
     }
@@ -95,13 +96,13 @@ const Display = ({params}) => {
       if (number > 1)
       {
         setload(true)
-        router.push(`/display/${infosmall}/${lim - div}`)
+        router.push(`/display/${infosmall}/${limi - 1}`)
         
       }
     }
     const Move =(e)=>{
     setload(true)
-    router.push(`/display/${infosmall}/${20 * e}`)
+    router.push(`/display/${infosmall}/${e}`)
    
     }
 
