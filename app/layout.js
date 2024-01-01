@@ -8,11 +8,7 @@ const dosis = Dosis({ subsets: ['latin'] })
 export const metadata = {
   title: 'Vidnaija',
   description: 'Download movies, hollywood, bollywood, korean series, tv series and anime series for free from Vidnaija',
-  keywords:['freedownload', 'free movie', 'free movie download', 'free movies', 'free movies downloas', 'anime download', 'free anime download', 'k-drama download', 'free k-drama download', 'hollywood movies', 'bollywood movies', 'kseries','tvseries','tvshows','free hollywood movies', 'vidnaija', 'vidnaija.com', 'nigeria movies', 'nigeria movie',],
-  twitter:{
-    card: "summary_large_image"
-  }
-
+  keywords:['freedownload', 'free movie', 'free movie download', 'free movies', 'free movies downloas', 'anime download', 'free anime download', 'k-drama download', 'free k-drama download', 'hollywood movies', 'bollywood movies', 'kseries','tvseries','tvshows','free hollywood movies', 'vidnaija', 'vidnaija.com', 'nigeria movies', 'nigeria movie',]
 }
 
 export default function RootLayout({ children }) {

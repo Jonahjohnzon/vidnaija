@@ -32,10 +32,7 @@ const Top = ({info,infosmall, settype}) => {
         return(
           <form className=' w-full'>
         <div className=' flex justify-end flex-col w-full items-center py-32 relative z-40'>
-        <div className=' w-[90%] sm:w-3/4 2xl:w-1/2 mb-4 flex items-center'>{series||<select onChange={(e)=>{settype(e.target.value)}} className='h-14 border-y-4 sm:cursor-pointer  outline-none border-l-4 border-r-[1px] border-[#020B19] bg-[#243651] px-7 text-white'>
-          <option value={'hollywood'}>Hollywood</option>
-          <option value={'bollywood'}>Bollywood</option>
-          </select>}<input type='text' value={props.values.search} onChange={props.handleChange('search')} placeholder='Search for Movie or TV Show' className='px-4 font-medium w-full h-14 border-y-4  outline-none border-[#020B19] bg-[#243651] text-white'/>
+        <div className=' w-[90%] sm:w-3/4 2xl:w-1/2 mb-4 flex items-center'><input type='text' value={props.values.search} onChange={props.handleChange('search')} placeholder='Search for Movie or TV Show' className='px-4 font-medium w-full h-14 border-y-4  outline-none border-[#020B19] bg-[#243651] text-white'/>
           <div className=' flex justify-center relative items-center h-14 border-y-4 border-r-4  border-[#020B19] bg-[#243651] text-white  px-3 text-2xl sm:cursor-pointer hover:text-yellow-500 '>
           <input type='submit' className=' absolute sm:cursor-pointer w-full h-full z-20' onClick={props.handleSubmit} value={" "}/><IoSearch />
           </div>
