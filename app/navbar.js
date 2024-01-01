@@ -93,7 +93,7 @@ const Navbar = () => {
        <li onClick={()=>router.push('/display/scifi')}> <div className=" mb-2 hover:bg-[#1F375F] hover:bg-opacity-10 px-10 "><p className=" w-32">SCI-FI</p></div></li>
        <li onClick={()=>router.push('/display/sport')}> <div className=" mb-2 hover:bg-[#1F375F] hover:bg-opacity-10 px-10 "><p className=" w-32">SPORT</p></div></li>
        <li onClick={()=>router.push('/display/thriler')}> <div className=" mb-2 hover:bg-[#1F375F] hover:bg-opacity-10 px-10 "><p className=" w-32">THRILER</p></div></li>
-       <li onClick={()=>router.push('/display/war')}> <div className=" mb-2 hover:bg-[#1F375F] hover:bg-opacity-10 px-10 "><p className=" w-32">WAR</p></div></li>
+       <li onClick={()=>router.push('/display/fantasy')}> <div className=" mb-2 hover:bg-[#1F375F] hover:bg-opacity-10 px-10 "><p className=" w-32">FANTASY</p></div></li>
       </ul>
     );
   };

@@ -22,7 +22,7 @@ const Series = ({obj,id, Gets, setload}) => {
   const Cate = ["","anime", "asianseries", "tvshows"]
   const [arr,setarr] = useState(obj?.seasons)
   const [submit, setsubmit] = useState(false)
-  const genres = ['WAR', 'THRILER', 'SPORT', 'SCI-FI', 'ROMANCE', 'MUSICAL', 'HORROR', 'HISTORY', 'FAMILY', 'DRAMA', 'CRIME', 'COMEDY', 'ANIMATION', 'ADVENTURE', 'ACTION'];
+  const genres = ['FANTASY', 'THRILER', 'SPORT', 'SCI-FI', 'ROMANCE', 'MUSICAL', 'HORROR', 'HISTORY', 'FAMILY', 'DRAMA', 'CRIME', 'COMEDY', 'ANIMATION', 'ADVENTURE', 'ACTION'];
   const [selectedGenres, setSelectedGenres] = useState([obj.type.a,obj.type.b,obj.type.c]);
 
 

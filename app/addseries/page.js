@@ -25,7 +25,7 @@ const Series = () => {
   const [arr,setarr] = useState([])
   const [loading, setloading] = useState(false)
   const [submit, setsubmit] = useState(false)
-  const genres = ['WAR', 'THRILER', 'SPORT', 'SCI-FI', 'ROMANCE', 'MUSICAL', 'HORROR', 'HISTORY', 'FAMILY', 'DRAMA', 'CRIME', 'COMEDY', 'ANIMATION', 'ADVENTURE', 'ACTION'];
+  const genres = ['FANTASY', 'THRILER', 'SPORT', 'SCI-FI', 'ROMANCE', 'MUSICAL', 'HORROR', 'HISTORY', 'FAMILY', 'DRAMA', 'CRIME', 'COMEDY', 'ANIMATION', 'ADVENTURE', 'ACTION'];
   const [selectedGenres, setSelectedGenres] = useState([]);
 
 

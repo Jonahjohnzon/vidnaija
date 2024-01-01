@@ -22,7 +22,7 @@ const Movie = ({obj,id, setload, Gets}) => {
     const [sizelow,setsizelow] = useState(obj.lowdownload.size)
     const [sizehigh,setsizehigh] = useState(obj.highdownload.size)
     const [high, sethigh] = useState(obj.highdownload.link)
-    const genres = ['WAR', 'THRILER', 'SPORT', 'SCI-FI', 'ROMANCE', 'MUSICAL', 'HORROR', 'HISTORY', 'FAMILY', 'DRAMA', 'CRIME', 'COMEDY', 'ANIMATION', 'ADVENTURE', 'ACTION'];
+    const genres = ['FANTASY', 'THRILER', 'SPORT', 'SCI-FI', 'ROMANCE', 'MUSICAL', 'HORROR', 'HISTORY', 'FAMILY', 'DRAMA', 'CRIME', 'COMEDY', 'ANIMATION', 'ADVENTURE', 'ACTION'];
     const [selectedGenres, setSelectedGenres] = useState([obj.type.a,obj.type.b,obj.type.c]);
     const handleGenreChange = (genre) => {
         if (selectedGenres.includes(genre)) {

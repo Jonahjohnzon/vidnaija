@@ -27,7 +27,7 @@ const Movie = () => {
     const [sizelow,setsizelow] = useState()
     const [sizehigh,setsizehigh] = useState()
     const [high, sethigh] = useState()
-    const genres = ['WAR', 'THRILER', 'SPORT', 'SCI-FI', 'ROMANCE', 'MUSICAL', 'HORROR', 'HISTORY', 'FAMILY', 'DRAMA', 'CRIME', 'COMEDY', 'ANIMATION', 'ADVENTURE', 'ACTION'];
+    const genres = ['FANTASY', 'THRILER', 'SPORT', 'SCI-FI', 'ROMANCE', 'MUSICAL', 'HORROR', 'HISTORY', 'FAMILY', 'DRAMA', 'CRIME', 'COMEDY', 'ANIMATION', 'ADVENTURE', 'ACTION'];
     const [selectedGenres, setSelectedGenres] = useState([]);
     const handleGenreChange = (genre) => {
         if (selectedGenres.includes(genre)) {
