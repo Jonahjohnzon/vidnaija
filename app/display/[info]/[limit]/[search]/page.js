@@ -9,6 +9,9 @@ import Pager from '@/app/pager';
 import { useRouter } from 'next/navigation';
 
 
+
+
+
 const Display = ({params}) => {
   const router = useRouter()
   const [loads, setload] = useState(true)
