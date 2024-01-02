@@ -6,5 +6,6 @@ Disallow: /addmovies
 Disallow: /addseries
 Disallow: /edit
 Disallow: /upcoming
+Disallow: /dmca
 
 Sitemap: https://vidnaija.com.ng/sitemap.xml
