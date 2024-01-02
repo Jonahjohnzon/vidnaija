@@ -3,7 +3,7 @@ export default async function sitemap() {
     const result = await res.json();
   
     const post = result.map((pos) => ({
-      url: `https://vidnija.com.ng/showcase/${pos._id}/1`,
+      url: `https://vidnaija.com.ng/showcase/${pos._id}/1`,
       lastModified: new Date(pos.updatedAt),
     }));
   
