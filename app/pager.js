@@ -36,11 +36,10 @@ const Pager = ({number,Move,array,page,type,Right,Left, div}) => {
               Move(e);
             }
           }}
-        >
-          {e}
+        >... {e}
         </p>
       ) : (
-        <p className='mr-3 cursor-pointer'>...</p>
+        <p className=''></p>
       )}
     </div>
   ))}
