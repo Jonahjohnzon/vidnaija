@@ -5,7 +5,7 @@ import Top from "./component/frontpage/top";
 import Trailer from "./component/frontpage/trailer";
 import Animes from "./component/frontpage/animes";
 import Loading from "./loading";
-
+import Search from '@/app/search'; 
 
 
 
@@ -56,6 +56,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen w-full flex-col items-center justify-between">
      { load  ?<section className=" flex flex-col items-center">
+      <Search/>
       <Top Datas={datas}/>
       <div className=" w-[88%] overflow-hidden pt-16">
       <Second header={"HOLLYWOOD RELEASE"} Datas={second} />

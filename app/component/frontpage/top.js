@@ -8,6 +8,7 @@ import Button from './button';
 import {motion} from 'framer-motion'
 import { useRouter } from 'next/navigation';
 
+
 const Top = ({Datas}) => {
     const [no, setno] = useState(1)
     const router = useRouter()
@@ -16,7 +17,7 @@ const Info =()=>{
     const [image, setimage] = useState(e.image)
   
         return(
-           <motion.div initial={{opacity:0, scale:0.9}} animate={{opacity:1,scale:1,transition:{duration:1}}} key={e._id} style={no ==  index ? {display:"block"}:{display:"none"}}  className=' w-full'> <div  className=' flex justify-center lg:justify-between  w-[100%] items-start'>
+           <motion.div initial={{opacity:0, scale:0.9}} animate={{opacity:1,scale:1,transition:{duration:1}}} key={e._id} style={no ==  index ? {display:"block"}:{display:"none"}}  className=' w-full'> <div  className=' flex justify-center lg:justify-between relative z-20 w-[100%] items-start'>
                 <section className=' flex items-center  '>
                   
                     <div>
@@ -63,7 +64,7 @@ const Left =()=>{
     }
 }
   return (
-    <div className=" bg-[url('/slider-bg2.jpg')] pt-48 pb-10  w-[100vw] overflow-hidden text-[#A5AFBE] flex justify-center  bg-cover bg-no-repeat ">
+    <div className=" bg-[url('/slider-bg2.jpg')] pt-12 pb-10  w-[100vw] overflow-hidden text-[#A5AFBE] flex justify-center  bg-cover bg-no-repeat ">
         <div className=' w-[95%] 2xl:w-9/12 flex items-center justify-between'>
         <div className=' text-5xl mr-20 sm:cursor-pointer hover:text-yellow-500 hidden md:block lg:hidden xl:block' onClick={Left}><FaChevronLeft /></div>
             <Info/>

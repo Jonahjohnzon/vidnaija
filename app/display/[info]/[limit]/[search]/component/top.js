@@ -7,7 +7,7 @@ import { Formik } from 'formik';
 import * as yup from 'yup'
 import { useRouter } from 'next/navigation';
 
-const Top = ({info,infosmall, settype}) => {
+const Top = ({info,infosmall}) => {
   const router = useRouter()
   const schema = yup.object({
     search:yup.string().required()
