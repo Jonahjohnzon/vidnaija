@@ -5,6 +5,7 @@ import { IoChatboxEllipses } from "react-icons/io5";
 import { BiSolidGrid } from "react-icons/bi";
 import { useRouter } from 'next/navigation';
 import Ads from '@/app/ads/ads';
+import { LazyLoadComponent } from 'react-lazy-load-image-component';
 
 const Animes = ({header, Datas}) => {
     const router = useRouter()
@@ -14,6 +15,7 @@ const Animes = ({header, Datas}) => {
             
             return(
                 <div key={e?._id} className=' mb-5 lg:mb-0 lg;:mr-0 mr-5'>
+                    <LazyLoadComponent >
                     <div style={{backgroundImage:`url(${e.image})`}} className=' relative 2xl:w-[200px] w-[200px] h-[300px] lg:w-[150px] xl:w-[180px] 3xl:w-[260px] flex justify-center items-center lg:h-[220px] xl:h-[250px] 2xl:h-[300px] 3xl:h-[380px] bg-cover group sm:cursor-pointer' onClick={()=>router.push(`/showcase/${e?._id}/1`)}>
                         <div className=' absolute w-full h-full bg-black z-30 opacity-20 group-hover:opacity-70 transition-all duration-500 '></div>
                         <div className=' relative z-30 opacity-0 group-hover:opacity-100 flex flex-col items-center ease-in-out transition-all duration-700'>
@@ -25,6 +27,7 @@ const Animes = ({header, Datas}) => {
                             <div className=' flex items-center'><div className=' text-yellow-400 mr-1'><FaStar /></div><div className=' font-semibold text-xl'>{e?.rating} <span className=' text-xs font-bold'>/10</span></div></div>
                         </div>
                     </div>
+                    </LazyLoadComponent>
                 </div>
             )
         })

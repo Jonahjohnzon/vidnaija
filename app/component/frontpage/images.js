@@ -1,5 +1,6 @@
 "use client"
 import React, { useEffect, useState } from 'react'
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const Imagesprofile = ({src}) => {
 const [usr, setusr] = useState('/profileimage/1')
@@ -106,7 +107,7 @@ const Get = () =>{
         Get()
     },[])
   return (
-    <img  src={usr} className=' border-black border-[1px] rounded-full'/>
+    <LazyLoadImage  src={usr} className=' border-black border-[1px] rounded-full'/>
   )
 }
 
