@@ -12,9 +12,9 @@ const router = useRouter()
         const comment = e.comment.length
         
         return(
-            <div key={e._id} className=' mb-10 mx-1 2xl:mx-3' onClick={()=>router.push(`/showcase/${e._id}/1`)}>
+            <div key={e._id} className=' mb-10 mx-1 2xl:mx-3  2xl:w-[200px] w-[150px] h-[220px] lg:w-[150px] xl:w-[180px] 3xl:w-[260px] lg:h-[220px] xl:h-[250px] 2xl:h-[300px] 3xl:h-[380px]' onClick={()=>router.push(`/showcase/${e._id}/1`)}>
                 <LazyLoadComponent>
-                <div style={{backgroundImage:`url(${e.image})`}} className=' relative  2xl:w-[200px] w-[150px] h-[220px] lg:w-[150px] xl:w-[180px] 3xl:w-[260px]  flex justify-center mb-2 items-center lg:h-[220px] xl:h-[250px] 2xl:h-[300px] 3xl:h-[380px] bg-cover group sm:cursor-pointer'>
+                <div style={{backgroundImage:`url(${e.image})`}} className=' w-full h-full relative  flex justify-center mb-2 items-center  bg-cover group sm:cursor-pointer'>
                     <div className=' absolute w-full h-full bg-black z-30 opacity-20 group-hover:opacity-70 transition-all duration-500 '></div>
                     <div className=' relative z-40 opacity-0 group-hover:opacity-100 flex flex-col items-center ease-in-out transition-all duration-700'>
                        <div > <Button name="DOWNLOAD" url={`/showcase/${e._id}/1`} /></div>
