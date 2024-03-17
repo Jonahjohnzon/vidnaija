@@ -41,7 +41,7 @@ const Footer = ({date}) => {
         <section className=' absolute bottom-0 w-full left-0 h-10 flex justify-center bg-[#141935] bg-opacity-60'>
             <div className=' flex items-center justify-center sm:justify-start  text-xs sm:text-base w-[65%]'>
                 <p className=' mr-1'>&copy;</p>
-                <p>{date} Vidnaija. Deigned by Midnight</p>
+                <p>{date} Vidnaija. Deigned by MID9IT</p>
             </div>
         </section>
     </footer>

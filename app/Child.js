@@ -33,7 +33,7 @@ const Child = ({ children, dosis }) => {
         options={{ showSpinner: false }}
         shallowRouting
       />
-      <Footer date={"2023"}/>
+      <Footer date={"2024"}/>
       </body>
   </html>
   )
