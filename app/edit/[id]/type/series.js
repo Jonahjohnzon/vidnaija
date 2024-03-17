@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { Formik, ErrorMessage } from 'formik'
 import Episode from '@/app/addseries/Episode'
 import * as yup from 'yup'
-import { useRouter } from 'next/navigation'
+import { useRouter } from 'next-nprogress-bar'
 
 const Series = ({obj,id, Gets, setload}) => {
   const router = useRouter()

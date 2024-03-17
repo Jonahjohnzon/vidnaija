@@ -6,7 +6,7 @@ import { BiSolidGrid } from "react-icons/bi";
 import Loading from '@/app/loading';
 import Note from '@/app/showcase/[id]/[season]/note';
 import Pager from '@/app/pager';
-import { useRouter } from 'next/navigation';
+import { useRouter } from 'next-nprogress-bar';
 
 
 

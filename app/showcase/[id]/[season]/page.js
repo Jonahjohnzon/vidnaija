@@ -5,7 +5,7 @@ import Body from './component/body'
 import Note from './note'
 import Chat from '@/app/chatbox/chat'
 import Loading from '@/app/loading'
-import { useRouter } from 'next/navigation'
+import { useRouter } from 'next-nprogress-bar'
 import Commentss from '@/app/comment'
 import Pager from '@/app/pager'
 

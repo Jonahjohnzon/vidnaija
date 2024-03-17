@@ -3,7 +3,7 @@ import { FaStar } from "react-icons/fa";
 import Button from './button';
 import { IoChatboxEllipses } from "react-icons/io5";
 import { BiSolidGrid } from "react-icons/bi";
-import { useRouter } from 'next/navigation';
+import { useRouter } from 'next-nprogress-bar';
 import { LazyLoadComponent } from 'react-lazy-load-image-component';
 
 const Second = ({header,Datas}) => {

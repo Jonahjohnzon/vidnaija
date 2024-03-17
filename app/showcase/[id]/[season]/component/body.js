@@ -2,7 +2,7 @@ import Button from "@/app/component/frontpage/button";
 import React from "react";
 import { FaPlay } from "react-icons/fa";
 import { FaStar } from "react-icons/fa";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next-nprogress-bar";
 import Season from "./season";
 import Link from "next/link"
 

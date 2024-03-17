@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react'
 import Series from './component/Series'
 import { FaCalendarPlus } from "react-icons/fa";
-import { useRouter } from 'next/navigation';
+import { useRouter } from 'next-nprogress-bar';
 import Loading from '../loading';
 import { Gets } from '../check/Check';
 

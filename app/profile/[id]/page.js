@@ -7,7 +7,7 @@ import React, { useEffect, useState } from 'react'
 import Type from './type'
 import { Formik } from 'formik'
 import { FaCheck } from "react-icons/fa";
-import { useRouter } from 'next/navigation'
+import { useRouter } from 'next-nprogress-bar'
 import * as yup from 'yup'
 
 const page = ({params}) => {

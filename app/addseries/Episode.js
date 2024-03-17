@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const Episode = ({ arr, setArr, props, sub }) => {
   const handleSeasonChange = (seasonIndex, newValue) => {

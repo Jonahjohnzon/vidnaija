@@ -5,7 +5,8 @@ import Top from "./component/frontpage/top";
 import Trailer from "./component/frontpage/trailer";
 import Animes from "./component/frontpage/animes";
 import Loading from "./loading";
-import Search from '@/app/search'; 
+import Search from "./search";
+import { PagesProgressBar as ProgressBar } from 'next-nprogress-bar';
 
 
 

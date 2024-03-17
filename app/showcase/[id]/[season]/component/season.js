@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react'
 import { FaAngleDown } from "react-icons/fa";
 import Link from "next/link"
-import { useRouter } from 'next/navigation';
+import { useRouter } from 'next-nprogress-bar';
 
 const Season = ({season,seano,seasonno,  setload, id}) => {
     const router = useRouter()

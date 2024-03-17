@@ -6,7 +6,7 @@ import { FaStar } from "react-icons/fa";
 import { LuDot } from "react-icons/lu";
 import Button from './button';
 import {motion} from 'framer-motion'
-import { useRouter } from 'next/navigation';
+import { useRouter } from 'next-nprogress-bar';
 
 
 const Top = ({Datas}) => {

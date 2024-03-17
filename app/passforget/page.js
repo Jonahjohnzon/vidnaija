@@ -3,7 +3,7 @@ import { Formik } from 'formik'
 import React, { useState } from 'react'
 import Loading from '../loading'
 import * as yup from 'yup'
-import { useRouter } from 'next/navigation'
+import { useRouter } from 'next-nprogress-bar'
 
 const page = () => {
     const router = useRouter()

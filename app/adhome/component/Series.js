@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import { MdDeleteForever } from "react-icons/md";
 import { MdMovieEdit } from "react-icons/md";
-import {useRouter} from "next/navigation"
+import {useRouter} from "next-nprogress-bar"
 
 
 const Series = ({sl}) => {

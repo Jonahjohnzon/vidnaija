@@ -3,7 +3,7 @@ import React, { useState , useEffect } from 'react'
 import { Formik, ErrorMessage } from 'formik'
 import * as yup from 'yup'
 import Loading from '../loading'
-import { useRouter } from 'next/navigation'
+import { useRouter } from 'next-nprogress-bar'
 import { Gets } from '../check/Check'
 
 

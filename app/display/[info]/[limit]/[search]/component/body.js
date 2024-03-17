@@ -2,7 +2,7 @@ import React from 'react'
 import { FaStar } from "react-icons/fa";
 import Button from '@/app/component/frontpage/button';
 import { IoChatboxEllipses } from "react-icons/io5";
-import { useRouter } from 'next/navigation';
+import { useRouter } from 'next-nprogress-bar';
 import { LazyLoadComponent } from 'react-lazy-load-image-component';
 
 
